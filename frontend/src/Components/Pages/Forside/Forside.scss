@@ -1,0 +1,20 @@
+.Container {
+     margin: auto;
+     width: 70%;
+     display: flex;
+    
+     align-items: stretch;
+   
+    
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+     border: 1px solid #ccc;
+     // Add more styles as needed
+   }
+   
+   .EventCard {
+     margin-bottom: 16px;
+     // Add specific styles for EventCard components
+   }
+   
