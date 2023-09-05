@@ -1,16 +1,19 @@
 import React from 'react';
-import './EventCard.scss';
+import './EventList.scss';
 
 
-const EventCard = ({item}) => {
+const EventList = ({item}) => {
   return (
-    <div className='events-card'>
+    <div className='list-card'>
       
      <img src={`http://localhost:4000/Assets/Images/events/small/${item.image}`} alt="events" />
      <h3>{item.title}</h3>
-     <h2>{item.genre}</h2>
+     <h5>{item.startdate}</h5>
+     <h5>{item.stopdate}</h5>
      
-      <div className='event-button'>
+     
+     
+      <div className='list-button'>
       <br />
       <button className="custom-button1" type="submit">LÆS MERE</button>
       <br />
@@ -21,4 +24,4 @@ const EventCard = ({item}) => {
   )
 }
 
-export default EventCard
+export default EventList

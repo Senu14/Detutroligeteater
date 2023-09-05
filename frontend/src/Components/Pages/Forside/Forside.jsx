@@ -9,9 +9,9 @@ const Forside = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch ('http://localhost:4000/events');
+        const response = await fetch ('http://localhost:4000/events?dir=ASC&limit=3&attributes=title,image,id');
         const jsonData = await response.json();
-        setData(jsonData.slice(0,7));
+        setData(jsonData.slice(0,3));
       }catch (error) {
         console.log('error fetching data:', error);
       }
@@ -22,11 +22,15 @@ const Forside = () => {
     <>
     <HeroWrapper />
     <div className='Container'>
+      
       {
         data.map((events, index) => {
-          return <EventCard key={index} item={{title:events.title,name: events.name}}/>
+          return <EventCard key={index} item={{image: events.image, title:events.title, name:events.genre}}/>
+          
         })
+        
       }
+      
     </div>
     </>
   );

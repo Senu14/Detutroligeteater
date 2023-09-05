@@ -1,20 +1,21 @@
+@use "../../../Assets/Styled/Colors.scss" as y;
 .Container {
      margin: auto;
      width: 70%;
      display: flex;
-    
      align-items: stretch;
+     gap: 3rem;
+     justify-content: center;
+     margin-bottom: 5rem;
+    //  border: 1px solid #ccc;
+     position: relative;
+     min-height: 100vh
+     
+   }
+  img {
    
-    
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 3rem;
-     border: 1px solid #ccc;
-     // Add more styles as needed
+    border: 7px solid #AD7A51;
+ 
    }
    
-   .EventCard {
-     margin-bottom: 16px;
-     // Add specific styles for EventCard components
-   }
    

@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className='lille-footer'>
+ 
     <footer>
     <footer>
         <div className="main-footer">
-          <div className="C&R">
+          <div className="upper">
             <h4>ADRESSE</h4>
             <p>Det utrolige teater
                Havnegade 901
@@ -19,13 +19,15 @@ function Footer() {
                EAN 5798003279845
                CVR 1001 0012
                Find vej på kort</p>
-
+</div>
+<div className="medium">
 
                <h4>BILLETSERVICE</h4>
                <p>Se åbningstider
                   Billettelefon: +45 96 31 80 80
                   billet@dut.dk</p>
-
+</div>
+<div className="lower">
 
                 <h4>PRAKTISK INFO</h4>
                   <p>Kontakt
@@ -45,27 +47,11 @@ function Footer() {
             {/* <FaLinkedinSquare size={"2em"} />
             <FaInstagramSquare size={"2em"} /> */}
           </div>
-          <div className="footerNav">
-            <ul>
-              <li>
-                {" "}
-                <Link to="/">Forside</Link>{" "}
-              </li>
-              <li>
-                <a href="/destinationer">F&E</a>
-              </li>
-              <li>
-                <a href="/vaerelser">Skuespillere</a>
-              </li>
-              <li>
-                <a href="/login">Login</a>
-              </li>
-            </ul>
-          </div>
+          
         </div>
       </footer>
     </footer>
-    </div>
+   
   );
 }
 

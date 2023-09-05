@@ -12,32 +12,16 @@
 
   p {
     font-size: 1em;
-    font-family: "Open-sans", sans-serif;
-//     color: s.$darkgrey;
-    font-weight: 400;
+    // font-family: "Open-sans", sans-serif;
+    // color: s.$darkgrey;
+    font-weight: 200;
     padding-left: 0.1rem;
   }
 
-.footerNav {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    ul {
-      display: flex;
 
-      li {
-        list-style: none;
-        margin: 0.5rem;
-
-        a {
-          text-decoration: none;
-          // color: s.$darkgrey;
-          font-weight: 400;
-        }
-      }
     }
-  }
-}
+  
+
 
 @media screen and (max-width: 768px) {
   .main-footer {
@@ -47,12 +31,6 @@
       padding-left: 1rem;
     }
 
-    .footerNav {
-      ul {
-        grid-template-columns: column;
-        align-items: center;
-        justify-content: center;
-      }
+   
     }
   }
-}

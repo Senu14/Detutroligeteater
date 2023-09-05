@@ -1,105 +1,22 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
 
-*{
-  padding: 0;
-  margin: 0;
+.collected-Nav {
+  background-color: y.$white;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
 
-  .header__burger {
-    transform: rotateZ(45deg);
-    perspective: 1000px;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    color: y.$Tertiær;
-  }
-  
-  .header__burger:before,
-  .header__burger:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-    transform: rotateX(70deg);
-    animation: 1s spin linear infinite;
-  }
-  
-  .header__burger:after {
-    color: #FF3D00;
-    transform: rotateY(70deg);
-    animation-delay: .4s;
-  }
-  
-  @keyframes rotate {
-    0% {
-      transform: translate(-50%, -50%) rotateZ(0deg);
+    h1 {
+      font-size: 34px;
+      color: #333;
+      margin: 0;
     }
-  
-    100% {
-      transform: translate(-50%, -50%) rotateZ(360deg);
-    }
-  }
-  
-  @keyframes rotateccw {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-  
-    100% {
-      transform: translate(-50%, -50%) rotate(-360deg);
-    }
-  }
-  
-  @keyframes spin {
-    0%,
-    100% {
-      box-shadow: .2em 0px 0 0px currentcolor;
-    }
-  
-    12% {
-      box-shadow: .2em .2em 0 0 currentcolor;
-    }
-  
-    25% {
-      box-shadow: 0 .2em 0 0px currentcolor;
-    }
-  
-    37% {
-      box-shadow: -.2em .2em 0 0 currentcolor;
-    }
-  
-    50% {
-      box-shadow: -.2em 0 0 0 currentcolor;
-    }
-  
-    62% {
-      box-shadow: -.2em -.2em 0 0 currentcolor;
-    }
-  
-    75% {
-      box-shadow: 0px -.2em 0 0 currentcolor;
-    }
-  
-    87% {
-      box-shadow: .2em -.2em 0 0 currentcolor;
-    }
-  }
-     
-  
- header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      font-size: 14px;
-      font-weight: 100;
-      background-color: y.$white;
-      font-family: "Open-sans", sans-serif;
-
+    
 img {
   width: 20%;
 }
@@ -112,60 +29,54 @@ img {
   justify-content: space-between;
  
 }
-
-.header__burger {
-  border: none;
-  background: none;
-  cursor: pointer;
+.search{
+  margin:7px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  
  
-  
-}
-// .header__burger-line {
-//   width: 100%;
-//   height: 3px;
-//   background-color: white;
- 
-// }
-.header__menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 
 }
-
-.header__menu-item {
-  padding: 10px;
-  color:  y.$Tertiær;
-}
-
-  
-.Links {
-  text-decoration: none; 
-}
-
-.Links:hover {
-  color: red;
-  cursor: pointer; 
-}
-
-      }
-    }
    
+.search button{
+  background-color: y.$white;
+  color: y.$Tertiær;
+  justify-content: flex-start;
+  float: left;
+  padding: 5px 10px;
+  margin-left: 20px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
 
-@media screen and (max-width: 768px) {
- 
+    nav {
+      display: flex;
+      float: left;
+      align-items: center;
+      justify-content: flex-start;
 
-    .header {
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1rem;
+      .Links {
+        text-decoration: none;
+        list-style-type: none;
+        margin-left: 20px;
+        padding: 5px;
+        transition: color 0.2s ease-in-out;
+     
+
+        li.header__menu {
+          color: #333;
+          cursor: pointer;
+
+          &:hover {
+            color: y.$Primær;
+          }
+
+          &.active {
+            font-weight: bold;
+            color: #000;
+          }
+        }
       }
     }
-  
+  }
+}
+

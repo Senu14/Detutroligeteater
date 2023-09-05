@@ -1,8 +1,8 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
-.events-card {
+.list-card {
      position: relative;
      // overflow: hidden;
-     flex: 0 1 560px; 
+     grid: 0 1 260px; 
      text-align: center;
      margin: 10px;
      width: 100%;
@@ -11,10 +11,10 @@
      
      // line-height: 1.4em;
      font-size: 16px;
-     height: 400px;
+     height: 360px;
 }
-.events-card img {
-     max-width: 259px;
+.list-card img {
+     max-width: 159px;
 }
     
   .event-button {
@@ -23,8 +23,9 @@
      .custom-button1 {
           background-color:  y.$Tertiær;
           color: #fff;
+          font-size: 6px;
           border: none;
-          padding: 10px 20px;
+          padding: 10px 10px;
           margin: 5px;
           cursor: pointer;
           border-radius: 5px;
@@ -32,8 +33,9 @@
         .custom-button2 {
           background-color:  y.$Primær;
           color: #fff;
+          font-size: 6px;
           border: none;
-          padding: 10px 20px;
+          padding: 10px 10px;
           margin: 5px;
           cursor: pointer;
           border-radius: 5px;
