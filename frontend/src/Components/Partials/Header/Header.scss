@@ -1,11 +1,39 @@
  @use "../../../Assets/Styled/Colors.scss" as y;
  @use "../../../Assets/Styled/Fonts.scss" as s;
 
- .collected-Nav {
-  background-color: y.$white;
-  text-decoration: none;
+ .active{
+  margin: auto;
+  width: 70%;
   padding: 10px;
+  display: flex;
+  text-decoration: none;
+  background-color: y.$white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  &.active {
+    background-color: y.$white;
+    color: y.$Tertiær;
+
+    button {
+        background-color: rgb(92, 211, 92) !important;
+        color: y.$white !important;
+        border: 1px solid rgb(92, 211, 92) !important;
+      }
+}
+.options {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  padding: 20px;
+  background-color:y.$Sekundær;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  color: gray;
+  width: 300px;
+  font-weight: 100;
+}
 
 header {
   display: flex;

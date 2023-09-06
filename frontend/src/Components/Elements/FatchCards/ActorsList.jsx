@@ -6,7 +6,7 @@ const ActorsList = ({item}) => {
   return (
     <div className='Actors-card'>
     
-     <img src={`http://localhost:4000/Assets/Images/actors/small/${item.image}`} alt="actors" />
+     <img src={`http://localhost:4000/Assets/Images/actors/${item.image}`} alt="actors" />
      <h3>{item.name}</h3>
      <p>{item.description}</p>
     

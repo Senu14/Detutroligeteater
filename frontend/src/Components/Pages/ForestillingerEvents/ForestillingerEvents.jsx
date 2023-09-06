@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import EventList from '../FatchCards/EventList';
+import EventList from '../../Elements/FatchCards/EventList';
 import './ForestillingerEvents.scss';
 import  HeroWrapper  from '../../Elements/HeroWrapper/HeroWrapper';
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import EventCard from '../FatchCards/EventCard';
+import EventCard from '../../Elements/FatchCards/EventCard';
 import './Forside.scss';
 import  HeroWrapper  from '../../Elements/HeroWrapper/HeroWrapper';
 
