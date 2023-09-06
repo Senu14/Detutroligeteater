@@ -1,43 +1,55 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
+@use "../../../Assets/Styled/Fonts.scss" as s;
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+  
 .list-card {
      position: relative;
+     display: flex;
+     height: 70px;
+     gap: 2rem;
      // overflow: hidden;
-     grid: 0 1 260px; 
-     text-align: center;
      margin: 10px;
-     width: 100%;
-     border: 2px solid #AD7A51;
+     border: 2px solid y.$Sekundær;
      color: y.$Tertiær;
-     
-     // line-height: 1.4em;
-     font-size: 16px;
-     height: 360px;
-}
-.list-card img {
-     max-width: 159px;
-}
     
-  .event-button {
-      display: flex;
-     }
-     .custom-button1 {
-          background-color:  y.$Tertiær;
-          color: #fff;
-          font-size: 6px;
-          border: none;
-          padding: 10px 10px;
-          margin: 5px;
-          cursor: pointer;
-          border-radius: 5px;
-        }
-        .custom-button2 {
-          background-color:  y.$Primær;
-          color: #fff;
-          font-size: 6px;
-          border: none;
-          padding: 10px 10px;
-          margin: 5px;
-          cursor: pointer;
-          border-radius: 5px;
-        }
+     h3 {
+     width: 100%;
+     float: right;
+     display: flex;
 
+     }
+    
+.list-button {
+     display: flex;
+     
+     
+.bt1 {
+     background-color:  y.$Tertiær;
+     color: #fff;
+     font-size: 6px;
+     border: none;
+     padding: 10px 10px;
+     margin: 5px;
+     cursor: pointer;
+    
+         
+       
+
+    }
+   }
+  }
+  .bt2 {
+     background-color:  y.$Primær;
+     color: #fff;
+     font-size: 6px;
+     border: none;
+     padding: 10px 10px;
+     margin: 5px;
+     cursor: pointer;
+    
+     }
+}

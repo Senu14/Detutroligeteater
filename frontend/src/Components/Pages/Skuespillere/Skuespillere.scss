@@ -1,0 +1,16 @@
+@use "../../../Assets/Styled/Colors.scss" as y;
+@use "../../../Assets/Styled/Fonts.scss" as s;
+.Actors-list{
+     
+     max-width: 1100px;
+     margin: 0 auto;
+     display: grid;
+     border: 2px solid #AD7A51;
+     color: y.$Tertiær;
+     
+     p h3{
+          font-family: s.$fontTitillium;
+          font-weight: 100;
+          font-size: 12px;
+     }
+}

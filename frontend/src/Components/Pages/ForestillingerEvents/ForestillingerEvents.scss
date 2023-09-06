@@ -1,25 +1,25 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
+@use "../../../Assets/Styled/Fonts.scss" as s;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 .Container-list {
-     margin: auto;
      width: 70%;
-     display: flex;
-     align-items: stretch;
-     gap: 3rem;
-     justify-content: center;
-     margin-bottom: 5rem;
-    //  border: 1px solid #ccc;
-     position: relative;
-     min-height: 100vh;max-width: 1200px;
+     margin: 25px;
+     max-width: 1200px;
      margin: 0 auto;
      display: grid;
-     gap: 1rem;
-     
-     
-   }
+     position: relative;
+     font-family: s.$fontPlayfair;
+    
   img {
-   
-    border: 7px solid #AD7A51;
- 
+    border: 5px solid #AD7A51;
+    max-width: 100px;
+    text-align: left;
    }
    
-   
+  }
+ }

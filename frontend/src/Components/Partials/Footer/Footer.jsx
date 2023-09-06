@@ -43,6 +43,7 @@ function Footer() {
           </div>
           <div className="Medias">
             <FaFacebookSquare size={"2em"} />
+            
            
             {/* <FaLinkedinSquare size={"2em"} />
             <FaInstagramSquare size={"2em"} /> */}

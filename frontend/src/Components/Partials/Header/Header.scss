@@ -1,82 +1,108 @@
-@use "../../../Assets/Styled/Colors.scss" as y;
+ @use "../../../Assets/Styled/Colors.scss" as y;
+ @use "../../../Assets/Styled/Fonts.scss" as s;
 
-.collected-Nav {
+ .collected-Nav {
   background-color: y.$white;
+  text-decoration: none;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-
-    h1 {
-      font-size: 34px;
-      color: #333;
-      margin: 0;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 100;
+  background-color: y.$white;
+  font-family:s.$fontPlayfair;
+.items {
+  margin-right: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: y.$Tertiær;
+  cursor: pointer;
     }
-    
+.list {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+    }
+
 img {
-  width: 20%;
-}
-img {
+  width: 10%;
   border: none;
   background: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
- 
 }
-.search{
-  margin:7px;
+nav {
   display: flex;
- 
-
-}
-   
-.search button{
-  background-color: y.$white;
-  color: y.$Tertiær;
-  justify-content: flex-start;
   float: left;
-  padding: 5px 10px;
-  margin-left: 20px;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-}
-
-    nav {
-      display: flex;
-      float: left;
-      align-items: center;
-      justify-content: flex-start;
-
-      .Links {
-        text-decoration: none;
-        list-style-type: none;
-        margin-left: 20px;
-        padding: 5px;
-        transition: color 0.2s ease-in-out;
+  align-items: center;
+  justify-content: flex-start;
+  
+  
+.Links {
+    margin-left: 20px;
+    padding: 5px;
+    transition: color 0.2s ease-in-out;
      
+li.header__menu {
+  color:  y.$Tertiær;
+  cursor: pointer;
 
-        li.header__menu {
-          color: #333;
-          cursor: pointer;
-
-          &:hover {
-            color: y.$Primær;
+&:hover {
+  color: y.$Primær;
           }
 
-          &.active {
-            font-weight: bold;
-            color: #000;
+&.active {
+  font-weight: bold;
+          
           }
         }
       }
     }
   }
 }
+a.items {
+  text-decoration: none;
+ 
+}
+.btn {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  padding: 5px;
+  color: #000;
+  font-size: 18px;
+  }
 
+@media screen and (max-width: 760px){
+  .list {
+      flex-direction: column;
+      height: auto;
+  }
+  .items:nth-child(1){
+      border-top: 1px solid rgba(255, 255, 255, 0.555);
+      margin-top: 50px;
+  }
+  .img {
+   height: 40px
+  }
+  .items {
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.555);
+      text-align: center;
+      margin-right: 0px;
+      padding: 20px 0;
+  }
+  .btn {
+      display: block;
+  }
+}
