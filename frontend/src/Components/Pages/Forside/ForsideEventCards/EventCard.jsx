@@ -9,6 +9,7 @@ const EventCard = ({item}) => {
      <img src={`http://localhost:4000/Assets/Images/events/small/${item.image}`} alt="events" />
      <h3>{item.title}</h3>
      <h2>{item.genre}</h2>
+     {/* <br/> */}
      
       <div className='event-button'>
       <br />

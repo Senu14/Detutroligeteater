@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ActorsList from '../../Elements/FatchCards/ActorsList';
+import ActorsList from './ActorList/ActorsList';
 import './Skuespillere.scss';
 
 const Skuespillere = () => {

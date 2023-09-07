@@ -17,7 +17,7 @@ const ActorsList = ({item}) => {
      </div>
      
      
-      <div className='Actors-button'>
+      <div className="Actors-button">
       <br />
       <button className="bts" type="submit">LÆS MERE</button>
       

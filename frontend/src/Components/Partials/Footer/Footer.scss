@@ -1,28 +1,84 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
 @use "../../../Assets/Styled/Fonts.scss" as s;
 
-footer{
-  margin-top: 30px;
-margin-bottom: 30px;
-}
 .main-footer {
-  margin: auto;
+  margin: 0 auto;
+  padding: 0;
   width: 70%;
+  margin-top: 30px;
+  margin-bottom: 30px;  
   display: flex;
   text-decoration: none;
-  justify-content: space-around;
   align-items: center;
-  padding: 0.1rem 1.0rem;
   background-color: y.$Tertiær;
-
+  color: #fff;
   p {
-    font-size: 1em;
+    font-size: 16px;
+    line-height: 21px;
     // font-family: "Open-sans", sans-serif;
     // color: s.$darkgrey;
     font-weight: 200;
     padding-left: 0.1rem;
+    
   }
+  h4{
+    font-size: 24px;
+  }
+ .upper{
+  margin-top: 40px;
+  position: relative;
+  top: -38px;
+  h4{
+    width:103px ;
+  }
+  p{
+    width:147px ;
+  }
+  padding-left: 53px;
+ }
+ .medium{
+  padding-left: 60px;
+  position: relative;
+  margin-top: 40px;
 
+  
+}
+.first-title-ftr{
+  width:168px ;
+}
+.first-text-ftr{
+  width:207px ;
+  padding-bottom: 9px;
+}
+.second-tite-ftr{
+  width:209px ;
+  margin-top: 40px;
+}
+.second-text-ftr{
+  width:173px ;
+  padding-top: 9px;
+  margin-bottom: 30px;
+}
+
+.lower{
+  margin-top: 40px;
+
+  position: relative;
+  top: -50px;
+  padding-left: 60px;
+  h4{
+    width: 178px;
+  }
+  p{
+    width: 140px;
+  }
+}
+
+.medias{
+  position: relative;
+  top: -65px;
+  left: 120px;
+}
 
     }
   

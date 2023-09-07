@@ -42,15 +42,16 @@ header {
   justify-content: space-between;
   padding: 10px;
   font-size: 14px;
-  font-weight: 100;
+  /*font-weight: 100;*/
   background-color: y.$white;
   font-family:s.$fontPlayfair;
 .items {
   margin-right: 20px;
-  font-size: 20px;
+  padding-right: 22px;
   text-transform: uppercase;
   color: y.$Tertiær;
   cursor: pointer;
+  
     }
 .list {
   list-style-type: none;
@@ -62,7 +63,8 @@ header {
     }
 
 img {
-  width: 10%;
+  width: 295px;
+  height: 120px;
   border: none;
   background: none;
   cursor: pointer;
@@ -70,7 +72,22 @@ img {
   flex-direction: column;
   justify-content: space-between;
 }
+.search{
+  height: 28px;
+  width: 218px;
+  margin-left: 400px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-color: rgb(199, 199, 199);
+}
+
 nav {
+
+  margin-left: 500px;
+  position: absolute;
+  margin-top: 95px;
+  font-size: 20px;
   display: flex;
   float: left;
   align-items: center;

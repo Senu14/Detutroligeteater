@@ -21,12 +21,21 @@ function Footer() {
                Find vej på kort</p>
 </div>
 <div className="medium">
-
-               <h4>BILLETSERVICE</h4>
-               <p>Se åbningstider
+    <div className="first-box">
+    <h4 className="first-title-ftr">BILLETSERVICE</h4>
+               <p className="first-text-ftr">Se åbningstider
                   Billettelefon: +45 96 31 80 80
                   billet@dut.dk</p>
+    </div>
+    <div className="second-box">
+    <h4 className="second-tite-ftr">ADMINISTRATION</h4>
+                     <p className="second-text-ftr">Telefon: +45 96 31 80 90
+                        adm@dut.dk</p>
+    </div>
+
+
 </div>
+
 <div className="lower">
 
                 <h4>PRAKTISK INFO</h4>
@@ -37,11 +46,12 @@ function Footer() {
                      Teatercaféen
                      Handelsbetingelser</p>
 
-                     <h4>ADMINISTRATION</h4>
-                     <p>Telefon: +45 96 31 80 90
-                        adm@dut.dk</p>
+                     
           </div>
-          <div className="Medias">
+          
+          <div className="medias">
+            <FaFacebookSquare size={"2em"} />
+            <FaFacebookSquare size={"2em"} />
             <FaFacebookSquare size={"2em"} />
             
            

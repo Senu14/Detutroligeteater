@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import EventCard from '../../Elements/FatchCards/EventCard';
+import EventCard from './ForsideEventCards/EventCard';
 import './Forside.scss';
-import  HeroWrapper  from '../../Elements/HeroWrapper/HeroWrapper';
+import  HeroWrapper from '../../App/Layout/HeroWrapper/HeroWrapper';
 
 const Forside = () => {
   const [data, setData] = useState([]);
@@ -30,6 +30,10 @@ const Forside = () => {
         })
         
       }
+      <div className='see-More'>
+        <br />
+        <button type="submit">SE ALLE FORESTILLINGER</button>
+        </div>
       
     </div>
     </>

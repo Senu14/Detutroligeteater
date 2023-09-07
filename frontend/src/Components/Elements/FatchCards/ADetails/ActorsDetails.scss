@@ -1,6 +1,7 @@
-@use "../../../Assets/Styled/Colors.scss" as y;
-@use "../../../Assets/Styled/Fonts.scss" as s;
-.Actors-list{
+@use "../../../../Assets/Styled/Colors.scss" as y;
+@use "../../../../Assets/Styled/Fonts.scss" as s;
+
+.ED-card {
      margin: auto;
      width: 70%;
      padding: 10px;
@@ -8,20 +9,35 @@
      display: grid;
      border: 2px solid #AD7A51;
      color: y.$Tertiær;
-     
-     p h3{
-          font-family: s.$fontTitillium;
-          font-weight: 100;
-          font-size: 12px;
-     }
-     h2{
-          font-size: 65px;
-          color: #D39D5B;
-          font-weight: 200;
-     }
 }
+p h3{
+     font-family: s.$fontTitillium;
+     font-weight: 100;
+     font-size: 12px;
+}
+h2{
+     font-size: 65px;
+     color: #D39D5B;
+     font-weight: 200;
+}
+.ED-image img {
+     max-width: 211px;
+     max-height:211px;
+}
+.text {
+     font-size: 26px;
+     color: y.$Primær;
+     display:block;
+     overflow : hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;    
+     width: 507px;
+     } 
+
 @media screen and (max-width: 768px){
-     .Actors-list{
+     .ED-card{
           margin: auto;
           width: 70%;
           padding: 10px;

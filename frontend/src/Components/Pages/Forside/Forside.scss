@@ -3,12 +3,12 @@
 
 .Container {
      margin: auto;
-     width: 70%;
+     width: 780px;
      display: flex;
      align-items: stretch;
      gap: 3rem;
      justify-content: center;
-     margin-bottom: 5rem;
+     margin-top: 64px;
     //  border: 1px solid #ccc;
      position: relative;
      min-height: 100vh
@@ -19,5 +19,21 @@
     border: 7px solid #AD7A51;
  
    }
+.see-More {
+  color: #fff;
+  bottom:160px;
+  right: -110px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position:absolute;
+
+}
+.see-More button {
+
+  background-color: y.$Sekundær;
+}
+
    
    

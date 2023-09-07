@@ -1,0 +1,13 @@
+@use "../../../Assets/Styled/Colors.scss" as y;
+@use "../../../Assets/Styled/Fonts.scss" as s;
+
+.ED-card {
+     margin-top: 0rem;  
+}
+.ED-card img {
+     margin: auto;
+     max-width: 980px;
+     
+     display: flex;
+     border: 2px solid #AD7A51;
+}

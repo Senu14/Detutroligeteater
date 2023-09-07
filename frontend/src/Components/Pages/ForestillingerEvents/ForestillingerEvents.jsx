@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import EventList from '../../Elements/FatchCards/Events/EventList';
+import EventList from './EventList/EventList';
 import './ForestillingerEvents.scss';
-import  HeroWrapper  from '../../Elements/HeroWrapper/HeroWrapper';
+import  HeroWrapper  from '../../App/Layout/HeroWrapper/HeroWrapper';
 
 const ForestillingerEvents = () => {
   const [event, setEvent] = useState([]);
@@ -25,7 +25,7 @@ const ForestillingerEvents = () => {
       
       {
         event.map((events, index) => {
-          return <EventList key={index} item={{image: events.image, startdate: events.startdate, stopdate: events.stopdate, title:events.title, name:events.genre}}/>
+          return <EventList key={index} item={{id: events.id, image: events.image, startdate: events.startdate, stopdate: events.stopdate, title:events.title, name:events.genre}}/>
           
         })
         

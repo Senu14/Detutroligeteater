@@ -1,0 +1,106 @@
+@use "../../../../Assets/Styled/Colors.scss" as y;
+@use "../../../../Assets/Styled/Fonts.scss" as s;
+
+.Actors-card {
+     margin: 10px;
+     color: y.$Tertiær;
+     font-size: 16px;
+     width: 100%;
+     display: grid;
+     align-items: center; 
+     grid-template-columns: 1fr 1fr 1fr;
+     column-gap: 3px;
+     
+}
+.Actors-card img {
+     max-width: 211px;
+     max-height:211px;
+}
+.text {
+     font-size: 26px;
+     color: y.$Primær;
+     display:block;
+     overflow : hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;    
+     width: 507px;
+     } 
+h3{
+    font-size: 32px;
+    text-transform: uppercase;
+    color: y.$Tertiær;
+    font-family: s.$fontTitillium; 
+    font-weight: 100;
+
+.Actors-button{
+     position: relative;
+     right: -15px;
+}
+.bts{
+     
+     background-color:  y.$Tertiær;
+     color: #fff;
+     background-color: y.$Tertiær;
+     border: none;
+     padding: 10px 10px;
+     cursor: pointer;
+     }
+}
+
+@media screen and (max-width: 768px){
+     .Actors-card {
+          margin: 10px;
+          color: y.$Tertiær;
+          font-size: 16px;
+          width: 100%;
+          display: grid;
+          align-items: center; 
+          grid-template-columns: 1fr 1fr 1fr;
+          column-gap: 2px;
+          
+     }
+     .Actors-card img {
+         
+          max-height:100px;
+          position: relative;
+     }
+     .text {
+          font-size: 16px;
+          color: y.$Primær;
+          display:block;
+          overflow : hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+           -webkit-box-orient: vertical;    
+          width: 200px;
+          } 
+     } 
+     h3{
+         font-size: 17px;
+         text-transform: uppercase;
+         color: y.$Tertiær;
+         font-family: s.$fontTitillium; 
+         font-weight: 50;
+     
+     .Actors-button{
+          position: relative;
+          right: 15px; 
+          width: 4rem;
+
+     }
+     .bts{
+          
+          background-color:  y.$Tertiær;
+          color: #fff;
+        
+          background-color: y.$Tertiær;
+          border: none;
+          // padding: 10px 10px;
+          cursor: pointer;
+         
+        
+     }
+}

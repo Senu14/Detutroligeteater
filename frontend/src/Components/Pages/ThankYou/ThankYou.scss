@@ -1,6 +1,7 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
 @use "../../../Assets/Styled/Fonts.scss" as s;
-.Actors-list{
+
+.thank-card {
      margin: auto;
      width: 70%;
      padding: 10px;
@@ -8,20 +9,9 @@
      display: grid;
      border: 2px solid #AD7A51;
      color: y.$Tertiær;
-     
-     p h3{
-          font-family: s.$fontTitillium;
-          font-weight: 100;
-          font-size: 12px;
-     }
-     h2{
-          font-size: 65px;
-          color: #D39D5B;
-          font-weight: 200;
-     }
 }
 @media screen and (max-width: 768px){
-     .Actors-list{
+     .ED-card{
           margin: auto;
           width: 70%;
           padding: 10px;
@@ -30,11 +20,6 @@
           border: 2px solid #AD7A51;
           color: y.$Tertiær;
           
-          p h3{
-               font-family: s.$fontTitillium;
-               font-weight: 100;
-               font-size: 12px;
-          }
           h2{
                font-size: 35px;
                color: #D39D5B;

@@ -1,5 +1,5 @@
-@use "../../../Assets/Styled/Colors.scss" as y;
-@use "../../../Assets/Styled/Fonts.scss" as s;
+@use "../../../../Assets/Styled/Colors.scss" as y;
+@use "../../../../Assets/Styled/Fonts.scss" as s;
 
 .events-card {
      position: relative;
@@ -7,7 +7,7 @@
      flex: 0 1 560px; 
      text-align: center;
      margin: 10px;
-     width: 100%;
+     width: 400px;
      border: 2px solid #AD7A51;
      color: y.$Tertiær;
      
@@ -16,7 +16,7 @@
      height: 400px;
 }
 .events-card img {
-     max-width: 259px;
+     max-width: 278px;
 }
     
   .event-button {

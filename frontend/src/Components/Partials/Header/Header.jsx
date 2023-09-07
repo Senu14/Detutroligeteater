@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import {AiOutlineSearch } from 'react-icons/ai';
 
 import axios from 'axios';
 
@@ -76,14 +77,20 @@ export default function Header() {
   return (
     <>
     <div className={ active ? "active too" : "active"}>
+  
       
     <header>
        
+    
         <img className="Top-logo"
     src={require("../../../Assets/SVG/Logo.jpg")}
     alt="logo"
   />
+  
+  <input className="search" placeholder="INDAST SOGEORD" type="search" id="search" name="search"></input>  
+  
    <nav>
+   
         {(toggleMenu || screenWidth > 500) && (
         <ul className="list">
             <Link to="/" className="items">
@@ -96,8 +103,8 @@ export default function Header() {
               <li className="header__menu">SKUESPILLERE</li>
             </Link>
 
-            <Link to="/EventDetails" className="items">
-              <li className="header__menu">EVENTDETAILS</li>
+            <Link to="/login" className="items">
+              <li className="header__menu">LOGIN</li>
             </Link>
 
             {!currentUser && (
@@ -128,7 +135,8 @@ export default function Header() {
               </div>
               </form>
               )}
-        </nav>
+              </nav>
+        
     </header>
     <main>
       <Outlet />

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './BuyTicket.scss'
 
-const BuyTicket = () => {
+const BuyTicket = ({item}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
   });
+
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,11 +19,14 @@ const BuyTicket = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    
   };
 
   return (
      <>
+      
+
+
     <div className="container">
       <h2>Køb billet</h2>
       <h3>MIT NORDKRAFT</h3>
