@@ -1,15 +1,18 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
 @use "../../../Assets/Styled/Fonts.scss" as s;
 
-
+footer{
+  margin-top: 30px;
+margin-bottom: 30px;
+}
 .main-footer {
+  margin: auto;
+  width: 70%;
   display: flex;
+  text-decoration: none;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  padding: 0.1rem 0rem;
+  padding: 0.1rem 1.0rem;
   background-color: y.$Tertiær;
 
   p {

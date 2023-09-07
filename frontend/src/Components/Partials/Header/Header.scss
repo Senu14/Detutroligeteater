@@ -6,6 +6,8 @@
   width: 70%;
   padding: 10px;
   display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-decoration: none;
   background-color: y.$white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -84,9 +86,7 @@ li.header__menu {
   color:  y.$Tertiær;
   cursor: pointer;
 
-&:hover {
-  color: y.$Primær;
-          }
+
 
 &.active {
   font-weight: bold;
@@ -99,8 +99,11 @@ li.header__menu {
 }
 a.items {
   text-decoration: none;
- 
+  &:hover {
+    color: y.$Primær;
+            }
 }
+
 .btn {
   display: none;
   position: absolute;

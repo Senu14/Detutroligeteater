@@ -96,8 +96,8 @@ export default function Header() {
               <li className="header__menu">SKUESPILLERE</li>
             </Link>
 
-            <Link to="/BuyTicket" className="items">
-              <li className="header__menu">BUYTICKET</li>
+            <Link to="/EventDetails" className="items">
+              <li className="header__menu">EVENTDETAILS</li>
             </Link>
 
             {!currentUser && (

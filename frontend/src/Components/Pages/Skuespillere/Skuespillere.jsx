@@ -21,6 +21,7 @@ const Skuespillere = () => {
     <>
  
     <div className='Actors-list'>
+       <h2>Skuespillere</h2>
       
       {
         actors.map((actors, index) => {

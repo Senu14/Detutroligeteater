@@ -6,7 +6,7 @@ import Forside from '../../Pages/Forside/Forside';
 import ForestillingerEvents from '../../Pages/ForestillingerEvents/ForestillingerEvents';
 import Skuespillere from '../../Pages/Skuespillere/Skuespillere';
 import Profile from '../../Pages/Login/Profile';
-import BuyTicket from '../../Pages/BuyTicket/BuyTicket';
+import EventDetails from '../../Pages/EventDetails/EventDetails';
 
 //Layouts that wrapped the other pages
 import NavBar from '../../Partials/NavBar/NavBar';
@@ -19,7 +19,7 @@ const AppRouter = () => {
           <Route path= "/ForestillingerEvents" element={<ForestillingerEvents />} />
           <Route path="/Skuespillere" element={<Skuespillere/>} />
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/BuyTicket" element={<BuyTicket/>} />
+          <Route path="/EventDetails" element={<EventDetails/>} />
 
 
     </Routes>

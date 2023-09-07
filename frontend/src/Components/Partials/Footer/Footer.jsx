@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
  
-    <footer>
+
     <footer>
         <div className="main-footer">
           <div className="upper">
@@ -51,7 +51,7 @@ function Footer() {
           
         </div>
       </footer>
-    </footer>
+  
    
   );
 }

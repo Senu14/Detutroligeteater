@@ -2,6 +2,7 @@
 @use "../../../Assets/Styled/Fonts.scss" as s;
 
 .container {
+  
      max-width: 600px;
      margin: 0 auto;
      padding: 20px;
@@ -30,7 +31,7 @@
    }
    
    button {
-     background-color: #007bff;
+    background-color: y.$Tertiær;
      color: #fff;
      padding: 10px 20px;
      border: none;
