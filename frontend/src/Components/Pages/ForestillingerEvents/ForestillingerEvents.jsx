@@ -25,7 +25,7 @@ const ForestillingerEvents = () => {
       
       {
         event.map((events, index) => {
-          return <EventList key={index} item={{id: events.id, image: events.image, startdate: events.startdate, stopdate: events.stopdate, title:events.title, name:events.genre}}/>
+          return <EventList key={index} item={{id: events.id, image: events.image, startdate: events.startdate, stopdate: events.stopdate, title:events.title, name:events.stage.name}}/>
           
         })
         

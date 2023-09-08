@@ -10,6 +10,7 @@ import EventDetails from '../../Pages/EventDetails/EventDetails';
 import BuyTicket from '../../Pages/BuyTicket/BuyTicket';
 import ActorDetails from '../../Elements/FatchCards/ADetails/ActorDetails';
 import ThankYou from '../../Pages/ThankYou/ThankYou';
+import writeReview from '../../Elements/FatchCards/WReview/writeReview'
 
 
 //Layouts that wrapped the other pages
@@ -25,6 +26,7 @@ const AppRouter = () => {
           <Route path="/Profile" element={<Profile/>} />
           <Route path="/Buy" element={<BuyTicket/>} />
           <Route path="/thank" element={<ThankYou/>} />
+          <Route path="/write" element={<writeReview/>} />
           <Route path="/event/:id" element={<EventDetails/>} />
           <Route path="/actor/:id" element={<ActorDetails/>} />
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import {AiOutlineSearch } from 'react-icons/ai';
+
 
 import axios from 'axios';
 
@@ -103,14 +103,14 @@ export default function Header() {
               <li className="header__menu">SKUESPILLERE</li>
             </Link>
 
-            <Link to="/login" className="items">
+            {/* <Link to="/login" className="items">
               <li className="header__menu">LOGIN</li>
-            </Link>
+            </Link> */}
 
-            {!currentUser && (
+            {currentUser && (
                <div className='.drop-up' onClick={()=>setopen(!open)}>
                
-                 <Link to="/Profile" className="items">
+                 <Link to="" className="items">
                  <li className="header__menu" onClick={toggleLoginForm}>LOGIN</li>
             </Link>
                
