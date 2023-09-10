@@ -9,7 +9,6 @@
 .Container-list {
      width: 70%;
      margin: 25px;
-     max-width: 1200px;
      margin: 0 auto;
      display: grid;
      position: relative;
@@ -22,4 +21,13 @@
    }
    
   }
+ }
+ @media screen and (max-width: 760px){
+  .Container-list {
+    width: 100%;
+    align-items: stretch;
+    margin-top: 64px;
+    
+  }
+ 
  }

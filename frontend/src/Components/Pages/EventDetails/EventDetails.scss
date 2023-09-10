@@ -34,7 +34,7 @@
      bottom:60px;
      position:absolute;
 }
- button  {
+ .buyT button  {
      padding: 10px 10px;
      border: none;
      border-radius: 5px;
@@ -43,32 +43,85 @@
      background-color: y.$Sekundær;
    }
    .paragraph { color: y.$Sekundær;
+     font-weight: 100;
+     font-size: 12px;
+     padding: 10px;
 
    }
-   form { background-color: y.$Sekundær;
+   .para {
+     font-size: 16px;
+     margin: 0;
+   }
+   .EDF {
+     margin-top: 0rem;
+     margin: auto;
+     width: 100%;
+     padding: 10px;
+     margin: 0 auto;
+     display: grid;
+     border: 2px solid #AD7A51;
+     color: y.$Tertiær;
+   }
+.EDF { background-color: y.$Sekundær;
 }
+
  
 .EDF input[type="text"]
  {
-  width: 10%;
+  width: 20%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  display: table-cell;
+    
 }
 .EDF input[type="password"] 
 {
-     width: 10%;
+  width: 20%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-
+  
 }
-.EDF button{
+.options {
+     display: grid;
+     padding-left: 5px;
+    vertical-align: bottom
+}
+ .Edb button{
      background-color: green;
+     width: 20%;
+     padding: 10px;
+     float: right;
+     display: inline;
+    
+    
 
 }
 .whiet{
      color: #fff;
+}
+.actors {
+     margin: 1em;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
+     gap: 1em;
+     .border {
+     //   border: 1px solid c.$secondary;
+       img {
+         object-fit: cover;
+         max-width: 100%;
+         border: none;
+       }
+       h4 {
+         text-align: center;
+         margin-top: 0.5em;
+         margin-bottom: 0.5em;
+         font-size: 1.2em;
+         font-weight: 400;
+     //     color: c.$primary;
+       }
+     }
 }
 
    
@@ -77,12 +130,37 @@
 @media screen and (max-width: 768px) {
 
      .ED-card {
-          margin-top: 0rem;  
+          margin-top: 0rem; 
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
      }
      .ED-card img {
-          margin: auto;
-          max-width: 180px;
+          max-height: 250px;
+          max-width: 250px;
+          position: relative;
           display: flex;
           border: 2px solid #AD7A51;
      }
+     .EDF {
+          max-height: 250px;
+          max-width: 250px;
+          
+         
+          display: grid;
+          border: 2px solid #AD7A51;
+          color: y.$Tertiær;
+          
+        }
+        .paragraph {
+          padding: 10px;
+          Width: 100%;
+        }
+      
+        .para {
+          font-size: 16px; 
+          margin: 5px 0; 
+        }
+        .Edb button{
+          width: 30%;
+        }
 }

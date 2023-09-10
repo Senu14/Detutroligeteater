@@ -44,10 +44,7 @@
      text-align: center;
    }
    
-   img {
-    
-    
-   }
+ 
    input,
 label {
   margin: 0.4rem 0;
@@ -56,4 +53,10 @@ label {
      display: block;
   }
 }
-   
+@media screen and (max-width: 768px){
+  .container{
+       margin: auto;
+       display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

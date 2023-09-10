@@ -30,10 +30,36 @@
   position:absolute;
 
 }
+a {
+  color: #fff;
+
+}
 .see-More button {
 
   background-color: y.$Sekundær;
+  padding: 10px 20px;
+
 }
 
-   
+@media screen and (max-width: 760px){
+ 
+  .Container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin: auto;
+        align-items: stretch;
+        
+        margin-top: 64px;
+      
+        
+      }  
+      .see-More button {
+        padding: 10px 10px;
+       
+     margin-bottom: -110;
+      }
+       
+
+    }
    

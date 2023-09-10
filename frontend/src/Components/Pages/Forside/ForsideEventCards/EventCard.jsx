@@ -18,7 +18,7 @@ const formatEventDate = (startDate, stopDate) => {
 
 const EventCard = ({item}) => {
   return (
-      // <Link to={`/event/${item.id}`}>
+      // <Link to={`/event/${item.id}`}  className='list-card'>
     <div className='events-card'>
     
 
@@ -34,7 +34,9 @@ const EventCard = ({item}) => {
       <br />
       <button className="custom-button1" type="submit">LÆS MERE</button>
       <br />
-      <button className="custom-button2" type="submit"> KØB BILLET</button>
+      <button className="custom-button2" type="submit"> 
+      <Link to={`/Buy`}>KØB BILLET</Link>
+      </button>
     </div>
     </div>
     // </Link>

@@ -35,7 +35,11 @@ const Forside = () => {
       }
       <div className='see-More'>
         <br />
-        <Link to="/ForestillingerEvents"><button type="submit">SE ALLE FORESTILLINGER</button></Link>
+        <button type="submit">
+        <Link to="/ForestillingerEvents">
+          SE ALLE FORESTILLINGER
+          </Link>
+          </button>
         </div>
       
     </div>

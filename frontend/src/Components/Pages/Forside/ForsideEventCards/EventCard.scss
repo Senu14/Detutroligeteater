@@ -19,10 +19,10 @@
      max-width: 278px;
 }
     
-  .event-button {
+.event-button {
       display: flex;
      }
-     .custom-button1 {
+.custom-button1 {
           background-color:  y.$Tertiær;
           color: #fff;
           border: none;
@@ -30,8 +30,9 @@
           margin: 5px;
           cursor: pointer;
           border-radius: 5px;
+         
         }
-        .custom-button2 {
+.custom-button2 {
           background-color:  y.$Primær;
           color: #fff;
           border: none;
@@ -39,5 +40,25 @@
           margin: 5px;
           cursor: pointer;
           border-radius: 5px;
+          text-decoration: none;
         }
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+
+@media screen and (max-width: 760px){
+ 
+.events-card {
+     width: 100%;
+     gap: 1;
+     margin: auto;
+     align-items: stretch;
+     margin-top: 105px;
+          
+            
+          }   
+    
+        }
+       
 

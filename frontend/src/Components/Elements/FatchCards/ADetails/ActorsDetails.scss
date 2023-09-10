@@ -20,9 +20,9 @@ h2{
      color: #D39D5B;
      font-weight: 200;
 }
-.ED-image img {
-     max-width: 211px;
-     max-height:211px;
+.ED-card img {
+     border: 13px solid #AD7A51;
+     height: 100%;
 }
 .text {
      font-size: 26px;
@@ -39,12 +39,8 @@ h2{
 @media screen and (max-width: 768px){
      .ED-card{
           margin: auto;
-          width: 70%;
-          padding: 10px;
-          margin: 0 auto;
           display: grid;
-          border: 2px solid #AD7A51;
-          color: y.$Tertiær;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           
           p h3{
                font-family: s.$fontTitillium;
@@ -52,7 +48,7 @@ h2{
                font-size: 12px;
           }
           h2{
-               font-size: 35px;
+               font-size: 12px;
                color: #D39D5B;
                font-weight: 200;
           }

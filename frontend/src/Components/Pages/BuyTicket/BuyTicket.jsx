@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './BuyTicket.scss'
+import { Link } from 'react-router-dom';
 
 const BuyTicket = ({item}) => {
   const [formData, setFormData] = useState({
@@ -109,7 +110,7 @@ const BuyTicket = ({item}) => {
       </div>
     </div>
     <div className="approve">
-     <button> GODKEND BESTILLING</button>
+     <button><Link to={`/thank`}>GODKEND BESTILLING</Link></button>
     </div>
     </>
   );

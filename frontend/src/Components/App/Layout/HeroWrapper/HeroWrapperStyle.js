@@ -3,17 +3,17 @@ import styled from 'styled-components';
 
 export const HeroWrapperStyle = styled.div `
      margin-top: 0rem;
-     .hero-image{
+.hero-image{
       margin: auto;
       width: 980px;
       height: 397px;
-            display: flex;
+      display: flex;
       align-items:flex-end;
-      left: -70px;
-
+      left: -90px;
       border: 2px solid #AD7A51;
      }
-     .contents{
+    
+.contents{
      max-width: 1200px;
      margin: 0 auto;
      h1 h4 {
@@ -27,14 +27,24 @@ export const HeroWrapperStyle = styled.div `
           position: relative;
           right: -240px;
           opacity: 0.5;
+          color: #333; 
      }
-     .hero-date{
+     .hero-date {
           opacity: 0.7;
           text-transform: uppercase;
           font-size: 20px;
           position: relative;
           right: -80px;
+        color: #333; 
      }
+     .contents h4 + hr {
+
+  width: 130%; 
+  height: 2px; 
+  background-color: #333; 
+  margin: 10px 0; 
+}
+     
      .title-hero{
           font-size: 65px;
           color: #D39D5B;
@@ -48,13 +58,13 @@ export const HeroWrapperStyle = styled.div `
           margin-bottom: 28px;
           position: relative;
           right: -150px;
+          color: #333; 
      }
      .hero-image img {
       height: 100%;
 
      }
      .image{
-      border: 13px solid #AD7A51;
       border: 13px solid #AD7A51;
       width: 500px;
       height: 300px;
@@ -63,5 +73,48 @@ export const HeroWrapperStyle = styled.div `
   object-fit: cover;
   object-position: center;
 }
+@media screen and (max-width: 760px){
+     .content{
+          margin: 0;
+     }
+
+.contents hr {
+   
+    height: 2px;
+    background-color: #333;
+    margin-left: 10px 0;
+}
+
+}
+ img {
+     display: grid;
+  /* width: 100%;
+  height: 100%; */
+}
+.title-hero{
+          font-size: 35px;
+          color: #D39D5B;
+          position: relative;
+          
+     }
+.p-hero{
+     font-size: 19px;
+     right: -100px;
+         
+}
+.hero-date {
+     font-size: 10px;
+     right: -80px;
+        
+}
+.small-text-up{
+     text-transform: uppercase;
+     font-size: 16px;
+     position: relative;
+     right: -120px;
+     opacity: 0.5;
+     color: #333; 
+     }
+
 
 ` 

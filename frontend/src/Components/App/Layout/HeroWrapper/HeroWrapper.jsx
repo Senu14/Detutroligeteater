@@ -10,8 +10,8 @@ export default function HeroWrapper() {
       <div className="contents">
       <p className="small-text-up">Stor scene</p>
       <h4 className="hero-date">28. april - 30. april 2023</h4>
-      
-      {/* <br> */}
+      <hr />
+     
       <h1 className="title-hero">Fyrtøjet</h1>
       <p className="p-hero">BØRNETEATER</p>
       </div>
