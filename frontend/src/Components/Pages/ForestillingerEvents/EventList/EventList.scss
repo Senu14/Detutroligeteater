@@ -16,12 +16,20 @@
      border: 2px solid y.$Sekundær;
      color: y.$Tertiær;
     
-     h3 {
+h3 {
+     color: y.$Sekundær;
      width: 100%;
      float: right;
+     font-family: s.$fontTitillium;
      display: flex;
+     font-size: 25px;
+     font-weight: bold;
 
      }
+ h5 {
+     display: flex;
+     font-size: 15px;
+}
     
 .list-button {
      display: flex;
@@ -30,25 +38,21 @@
 .bt1 {
      background-color:  y.$Tertiær;
      color: #fff;
-     font-size: 10px;
+     font-size: 14px;
      border: none;
      padding: 6px 30px;
-     margin: 5px;
+     margin: 10px;
      cursor: pointer;
-    
-         
-       
-
     }
    }
   }
   .bt2 {
      background-color:  y.$Primær;
      color: #fff;
-     font-size: 10px;
+     font-size: 14px;
      border: none;
      padding: 6px 30px;
-     margin: 5px;
+     margin: 10px;
      cursor: pointer;
     
      }
@@ -61,7 +65,7 @@
        
      }
 .list-card h5 {
-     font-size: 10px;
+     font-size: 7px;
 
      }
 .list-card h3{

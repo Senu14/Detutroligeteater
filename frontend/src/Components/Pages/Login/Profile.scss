@@ -4,10 +4,9 @@
      margin-top: 0rem;
      margin: auto;
      width: 70%;
-     padding: 10px;
      margin: 0 auto;
      display: grid;
-     border: 2px solid #AD7A51;
+     border: 3px solid #AD7A51;
      color: y.$Tertiær;
 }
 
@@ -31,17 +30,17 @@
 
 .PR-card .RESERVATIONS{
      height: 250px;
-     width: 100%;
-     border: 1px solid brown;
+     width: 95%;
+     
+     border: 1px solid #AD7A51;
      margin: 10px 10px;
-     margin-right: 10px;
      display: flex;
 
 }
 .PR-card .container-2 {
      height: 250px;
      width: 100%;
-     border: 1px solid brown;
+     border: 2px solid #AD7A51;
      margin: 5px;
      margin-right: 5px;
      display: flex;
@@ -50,15 +49,16 @@
 .PR-card .container-3 {
      height: 250px;
      width: 100%;
-     border: 1px solid brown;
+     border: 1px solid #AD7A51;
      margin: 10px 10px;
-     margin-right: 10px;
+    
      display: flex;
 }
 
 .RESERVATIONS.table {
      font-weight: 200;
      border: 1px solid #AD7A51;
+     margin-right: 10px;
 }
 
 .table, th, tr {
