@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from "@tanstack/react-query";
 import axios from 'axios'
+import { useAuth } from '../../Auth/AuthProvider';
+
 // import getCurrentUser from '../../../utils/getCurrentUser';
 import './Profile.scss';
 
@@ -78,6 +80,9 @@ const fetchReviews = async () => {
 function Profile() {
   const [user, setCurrentUser] = useState(null);
 
+const { loginData, setLoginData} = useAuth();
+
+
   const { data: reservations } = useQuery(['reservations'], () => fetchReservations(user?.id)); // Pass 'user?.id' to the function
   // const { data: favorites } = useQuery(['favorites'], fetchFavorites);
   // const { data: reviews } = useQuery(['reviews'], fetchReviews);
@@ -105,9 +110,10 @@ function Profile() {
 
   return (
     <div className='PR-card'>
-      <h1>Profile Page</h1>
+      <h1>MIN SIDE</h1>
 {/* Display Reservations */}
-<div className="RESERVATIONS">
+<div className='reservation'>
+  <p>Du er logget in på som:{loginData.user}</p>
   <h2>Reservations</h2>
   <table>
     <thead>
@@ -151,12 +157,12 @@ function Profile() {
       </div>
 
       {/* Display Reviews */}
-      <div className="REVIEWS">
+      {/* <div className="REVIEWS">
         <h2>Reviews</h2>
-        <table>
+        <table> */}
           {/* Render your reviews data here */}
-        </table>
-      </div>
+        {/* </table>
+      </div> */}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../../Auth/AuthProvider';
 
 import axios from 'axios';
 
@@ -14,11 +15,15 @@ export default function Header() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
+
+  const { loginData, setLoginData} = useAuth();
+
   const navigate = useNavigate();
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
   }
+  
 
   const screenWidth = window.innerWidth;
 
@@ -27,7 +32,7 @@ export default function Header() {
     try {
       const res = await axios.post("http://localhost:4000/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      setCurrentUser(res.data); // Set the current user state
+      setCurrentUser(res.data); //use the current user state
       navigate("/Profile");
     } catch (err) {
       if (err.response) {
@@ -37,6 +42,23 @@ export default function Header() {
       }
     }
   };
+
+  const getUserData = async user_id =>{
+    const url = `http://localhost:{{portnumber}}/users/{{user_id}}`
+    const result = await axios.get(url)
+    return result
+    // console.log(result);
+  }
+
+  const handleSessionData = async data =>{
+    if (data) {
+      const user = await getUserData(data.user_id)
+      console.log(user);
+      data.user = `${user.data.firstname} ${user.data.lastname}`
+      sessionStorage.setItem("token", JSON.stringify(data));
+      setLoginData(data)
+    }
+  }
 
   const handleLogout = () => {
     localStorage.removeItem('currentUser');

@@ -6,8 +6,9 @@
      width: 70%;
      margin: 0 auto;
      display: grid;
-     border: 3px solid #AD7A51;
+     border: 2px solid #AD7A51;
      color: y.$Tertiær;
+     
 }
 
 .PR-card h2 {
@@ -24,14 +25,14 @@
     
 //    }
    .PR-card p {
-   padding-left: 800px;
+   padding-left: 200px;
    margin-bottom: 10px;
 }
 
-.PR-card .RESERVATIONS{
+.reservation{
      height: 250px;
-     width: 95%;
-     
+     width: 90%;
+     margin: 5px;
      border: 1px solid #AD7A51;
      margin: 10px 10px;
      display: flex;
