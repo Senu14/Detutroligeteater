@@ -131,7 +131,7 @@ function EventDetails() {
 
           {/* ACTORS SECTION START */}
           <section className='Actors'>
-          {actorData.slice(0, 5).map((actor) => (
+          {actorData.slice(0, 4).map((actor) => (
               <article  key={actor.id}>
                 <figure>
                   {actor.image && (

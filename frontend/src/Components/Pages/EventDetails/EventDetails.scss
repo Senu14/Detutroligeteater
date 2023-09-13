@@ -34,13 +34,31 @@
      bottom:60px;
      position:absolute;
 }
- .buyT button  {
-     padding: 10px 10px;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     color: #fff;
-     background-color: y.$Sekundær;
+.buyT button  {
+    display: flex;
+    padding: 0.5em 1em;
+    color: white;
+    background-color: y.$Primær;
+    justify-content: space-between;
+    h3 {
+      color: y.$Primær;
+      font-family: s.$fontPlayfair;
+      font-size: 3em;
+      font-weight: 100;
+    }
+  button {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      background-color: y.$Primær;
+      color: white;
+      border: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
    }
    .paragraph { color: y.$Sekundær;
      font-weight: 100;
@@ -101,7 +119,7 @@
 .whiet{
      color: #fff;
 }
-.actors {
+.Actors {
      margin: 1em;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));

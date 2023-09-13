@@ -15,7 +15,7 @@ export default function HeroWrapper() {
       <h1 className="title-hero">Fyrtøjet</h1>
       <p className="p-hero">BØRNETEATER</p>
       </div>
-     <img class="image image-contain" src={require('../../../../Assets/Images/Hero-image/Fyrtøjet.png')} alt="Hero" />
+     <img src={require('../../../../Assets/Images/Hero-image/Fyrtøjet.png')} alt="Hero" />
      </div>
    </HeroWrapperStyle>
 

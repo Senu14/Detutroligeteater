@@ -3,10 +3,14 @@ import EventCard from './ForsideEventCards/EventCard';
 import './Forside.scss';
 import  HeroWrapper from '../../App/Layout/HeroWrapper/HeroWrapper';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../Providers/AuthProvider';
 
 
 
 const Forside = () => {
+  
+
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,6 +28,7 @@ const Forside = () => {
   return (
     <>
     <HeroWrapper />
+   
     <div className='Container'>
       
       {
@@ -41,7 +46,7 @@ const Forside = () => {
           </Link>
           </button>
         </div>
-      
+    
     </div>
     </>
   );

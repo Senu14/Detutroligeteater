@@ -5,12 +5,14 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import Forside from '../../Pages/Forside/Forside';
 import ForestillingerEvents from '../../Pages/ForestillingerEvents/ForestillingerEvents';
 import Skuespillere from '../../Pages/Skuespillere/Skuespillere';
-import Profile from '../../Pages/Login/Profile';
+import Profile from '../../Pages/Profile/Profile';
 import EventDetails from '../../Pages/EventDetails/EventDetails';
 import BuyTicket from '../../Pages/BuyTicket/BuyTicket';
 import ActorDetails from '../../Elements/FatchCards/ADetails/ActorDetails';
 import ThankYou from '../../Pages/ThankYou/ThankYou';
 import ReviewForm from '../../Elements/FatchCards/WReview/ReviewForm';
+import NLogin from '../../Pages/NLogin/NLogin';
+import NotFound from '../../Pages/NotFound/NotFound';
 
 
 //Layouts that wrapped the other pages
@@ -30,22 +32,14 @@ const AppRouter = () => {
           <Route path='/' element={<NavBar />} />
           <Route path= "/ForestillingerEvents" element={<ForestillingerEvents />} />
           <Route path="/Skuespillere" element={<Skuespillere/>} />
-          <Route
-              path="/Profile"
-              element={
-                isAuthenticated() ? (
-                  <Profile />
-                ) : (
-                  <Navigate to="/" replace />
-                )
-              }
-            />
-
+          <Route path="/Profile" element={<Profile/>} />
           <Route path="/buy" element={<BuyTicket/>} />
           <Route path="/thank" element={<ThankYou/>} />
           <Route path="/write" element={<ReviewForm/>} />
           <Route path="/event/:id" element={<EventDetails/>} />
           <Route path="/actor/:id" element={<ActorDetails/>} />
+          <Route path="/log" element={<NLogin/>} />
+          <Route path="/Not" element={<NotFound/>} />
 
 
     </Routes>

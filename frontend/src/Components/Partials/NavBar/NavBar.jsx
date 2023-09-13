@@ -6,12 +6,12 @@ const NavBar = () => {
      <div className='main-Nav'>
      <header>
          <nav>
-           <h1>Snippets</h1>
+           
              <NavLink to="/"><span>Forside</span></NavLink>
              <NavLink to="/Forestillinger & Events"><span>Forestillinger & Events</span></NavLink>
              <NavLink to="/Skuespillere"><span>Skuespillere</span></NavLink>
-             <NavLink to="/Profile"><span>Profile</span></NavLink>
-             <NavLink to="/EventDetails"><span>EventDetails</span></NavLink>
+             <NavLink to="/log"><span>NLogin</span></NavLink>
+             {/* <NavLink to="/EventDetails"><span>EventDetails</span></NavLink> */}
          </nav>
      </header>
      {/* <main>

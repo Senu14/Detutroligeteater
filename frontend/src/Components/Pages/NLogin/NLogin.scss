@@ -1,0 +1,28 @@
+form{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+
+label {
+    
+     font-weight: bold;
+   }
+   
+   input[type="text"],
+   input[type="password"] {
+     width:250px;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+   }
+   .sb button{
+    padding: 6px 20px;
+    border-radius: 3px;
+   }
+  .sb {
+    width: 100%;
+  display: grid;
+  justify-content: center;
+
+   }

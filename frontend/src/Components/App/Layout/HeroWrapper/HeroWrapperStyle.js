@@ -6,16 +6,18 @@ export const HeroWrapperStyle = styled.div `
 .hero-image{
       margin: auto;
       width: 980px;
-      height: 397px;
+      height: 297px;
       display: flex;
       align-items:flex-end;
       left: -90px;
       border: 2px solid #AD7A51;
+      margin-top: 30px;
      }
     
 .contents{
      max-width: 1200px;
      margin: 0 auto;
+    
      h1 h4 {
           font-size: bold;
      }
@@ -74,8 +76,13 @@ export const HeroWrapperStyle = styled.div `
   object-position: center;
 }
 @media screen and (max-width: 760px){
+     .hero-image{
+          align-items: center;
+          justify-content: center;
+     }
      .content{
           margin: 0;
+          justify-content: center;
      }
 
 .contents hr {
@@ -83,14 +90,15 @@ export const HeroWrapperStyle = styled.div `
     height: 2px;
     background-color: #333;
     margin-left: 10px 0;
+    justify-content: center;
+}
+ img{
+     display: none;
 }
 
+
 }
- img {
-     display: grid;
-  /* width: 100%;
-  height: 100%; */
-}
+
 .title-hero{
           font-size: 35px;
           color: #D39D5B;

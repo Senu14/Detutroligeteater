@@ -2,6 +2,8 @@
 @use "../../../../Assets/Styled/Fonts.scss" as s;
 
 .ED-card {
+     display: flex;
+     flex-direction: column; 
      margin: auto;
      width: 70%;
      padding: 10px;
@@ -20,10 +22,12 @@ h2{
      color: #D39D5B;
      font-weight: 200;
 }
-.ED-card img {
-     border: 13px solid #AD7A51;
-     height: 100%;
-}
+// img {
+//      max-width: 278px;
+//      border: 13px solid #AD7A51;
+//      height: auto;
+//      display: flex;
+// }
 .text {
      font-size: 26px;
      color: y.$Primær;

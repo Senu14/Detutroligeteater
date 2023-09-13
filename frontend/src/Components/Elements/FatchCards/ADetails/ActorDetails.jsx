@@ -35,11 +35,9 @@ function ActorDetails() {
         <>
           <div className='ED-image'>
             {data.image && 
-            
-            // data.title && data.name && data.startdate && data.stopdate && data.price && data.description && 
             (
               <img
-                src={require(`../../../../Assets/Images/actors/${data.image}`)} alt=""
+                src={require(`../../../../Assets/Images/actors/${data.image}`)} alt="Acrors"
                 
               />
             )}
