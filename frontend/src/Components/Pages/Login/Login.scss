@@ -1,16 +1,19 @@
+@use "../../../Assets/Styled/Colors.scss" as y;
+@use "../../../Assets/Styled/Fonts.scss" as s;
+
 form{
   width: 100%;
   display: grid;
   justify-content: center;
+  background-color: y,y.$Primær;;
 }
 
 label {
     
      font-weight: bold;
    }
-   
-   input[type="text"],
-   input[type="password"] {
+  
+   input{
      width:250px;
      padding: 10px;
      border: 1px solid #ccc;

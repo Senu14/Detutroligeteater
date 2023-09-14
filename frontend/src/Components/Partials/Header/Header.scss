@@ -21,8 +21,8 @@
         background-color: y.$white;
         font-family:s.$fontPlayfair;
 .items {
-        margin-right: 20px;
-        padding-right: 22px;
+        margin-right: 23px;
+        padding-right: 12px;
         text-transform: uppercase;
         color: y.$Tertiær;
         cursor: pointer;
@@ -32,15 +32,15 @@
         list-style-type: none;
         height: 100%;
         display: flex;
-        margin-left: 470px;
+        margin-right: 20px;
         justify-content: center;
         align-items: center;
         position: relative;
           }
       
   img {
-        width: 295px;
-        height: 120px;
+        width: 200px;
+        height: 100px;
         border: none;
         background: none;
         cursor: pointer;
@@ -51,7 +51,7 @@
 .search{
         height: 28px;
         width: 218px;
-        margin-left: 400px;
+        margin-left: 340px;
         border-top: none;
         border-right: none;
         border-left: none;

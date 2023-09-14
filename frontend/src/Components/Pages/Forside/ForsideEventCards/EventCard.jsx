@@ -21,13 +21,18 @@ const EventCard = ({item}) => {
       // <Link to={`/event/${item.id}`}  className='list-card'>
     <div className='events-card'>
     
-
+    
      <img src={`http://localhost:4000/Assets/Images/events/small/${item.image}`} alt="events" />
-     <h3>{item.title}</h3>
+     <div className="content">
+     <p className="small-text-up">Stor scene</p>
+     <h5 className="hero-date">{formatEventDate(item.startdate, item.stopdate)}</h5>
+     <hr />
+     <h3 className="title-hero">{item.title}</h3>
      {item.stage && item.stage.name && <h4>{item.stage.name}</h4>}
-     <h5>{formatEventDate(item.startdate, item.stopdate)}</h5>
+     {item.genre && item.genre.name && <h4>{item.genre.name}</h4>}
+  
 
-     <h2>{item.genre}</h2>
+     </div>
      {/* <br/> */}
      
       <div className='event-button'>
@@ -37,6 +42,7 @@ const EventCard = ({item}) => {
       <button className="custom-button2" type="submit"> 
       <Link to={`/Buy`}>KØB BILLET</Link>
       </button>
+      
     </div>
     </div>
     // </Link>

@@ -5,47 +5,81 @@
      // position: relative;
      // overflow: hidden;
      flex: 0 1 560px; 
-     text-align: center;
      margin: 10px;
      width: 400px;
      border: 2px solid #AD7A51;
-     color: y.$Tertiær;
-     
      // line-height: 1.4em;
-     font-size: 16px;
+     // font-size: 16px;
      height: 400px;
+
+.content{
+          margin: 0 auto;
+          margin-left: 1rem;
+}     
 }
+
 .events-card img {
      max-width: 278px;
 }
+
+
+
     
 .event-button {
       display: flex;
+      margin-left: 4rem;
+      margin-top: 1rem;
      }
 .custom-button1 {
           background-color:  y.$Tertiær;
           color: #fff;
           border: none;
-          padding: 10px 20px;
-          margin: 5px;
+          padding: 10px 10px;
+          margin: 3px;
           cursor: pointer;
-          border-radius: 5px;
+          
          
         }
 .custom-button2 {
           background-color:  y.$Primær;
           color: #fff;
           border: none;
-          padding: 10px 20px;
-          margin: 5px;
+          padding: 10px 10px;
+          margin: 3px;
           cursor: pointer;
-          border-radius: 5px;
+          
           text-decoration: none;
         }
         a {
           text-decoration: none;
           color: #fff;
         }
+
+.events-card h3{
+     margin-left: 6.9rem;
+     font-size: 28px;
+    font-weight: bold;
+     color: y.$Sekundær;
+     // font-family: Playfair Display;
+     }
+.content p {
+     opacity: 0.6;
+     font-size: 11px;
+     margin-left: 12rem;
+     text-transform: uppercase;
+} 
+
+.content hr {
+     
+     height: 2px; 
+     background-color: #333; 
+     margin: 10px 0; 
+   }
+.content h5{
+     font-weight: lighter;
+     margin-left: 4.3rem;
+}
+      
 
 @media screen and (max-width: 760px){
  

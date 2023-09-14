@@ -9,14 +9,16 @@ import Profile from '../../Pages/Profile/Profile';
 import EventDetails from '../../Pages/EventDetails/EventDetails';
 import BuyTicket from '../../Pages/BuyTicket/BuyTicket';
 import ActorDetails from '../../Elements/FatchCards/ADetails/ActorDetails';
+// import SeatPicker from '../../Pages/SeatPicker/SeatPicker';
 import ThankYou from '../../Pages/ThankYou/ThankYou';
 import ReviewForm from '../../Elements/FatchCards/WReview/ReviewForm';
-import NLogin from '../../Pages/NLogin/NLogin';
+import Login from '../../Pages/Login/Login';
 import NotFound from '../../Pages/NotFound/NotFound';
 
 
 //Layouts that wrapped the other pages
 import NavBar from '../../Partials/NavBar/NavBar';
+
 
 
 function isAuthenticated() {
@@ -38,7 +40,8 @@ const AppRouter = () => {
           <Route path="/write" element={<ReviewForm/>} />
           <Route path="/event/:id" element={<EventDetails/>} />
           <Route path="/actor/:id" element={<ActorDetails/>} />
-          <Route path="/log" element={<NLogin/>} />
+          {/* <Route path="/Pick" element={<SeatPicker/>} /> */}
+          <Route path="/log" element={<Login/>} />
           <Route path="/Not" element={<NotFound/>} />
 
 

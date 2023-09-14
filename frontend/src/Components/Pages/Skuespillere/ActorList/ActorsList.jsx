@@ -13,10 +13,13 @@ const ActorsList = ({item}) => {
    
     <div className='image'>
      <img src={`http://localhost:4000/Assets/Images/actors/${item.image}`} alt="actors" />
+     <hr />
      </div>
      <div className="text">
      <h3>{item.name}</h3>
+     
      <p>{item.description}</p>
+     
     
      
     
@@ -25,9 +28,9 @@ const ActorsList = ({item}) => {
      
      
       <div className="Actors-button">
-      <br />
+    
       
-      <button className="bts" type="submit">
+      <button type="submit">
       <Link to={`/actor/${item.id}`}>LÆS MERE</Link>
         </button>
      

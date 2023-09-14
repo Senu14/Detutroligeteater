@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './BuyTicket.scss'
 import { Link } from 'react-router-dom';
 
-const BuyTicket = ({item}) => {
+const BuyTicket = ({}) => {
+  const [data, setData] = useState({});
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,16 +24,15 @@ const BuyTicket = ({item}) => {
     
   };
 
+  
+
   return (
      <>
+    
+     <div className="container">
       
-
-
-    <div className="container">
       <h2>Køb billet</h2>
-      <h3>MIT NORDKRAFT</h3>
-      <p>KÆLDERSCENEN 14.MAJ KL.20:00</p>
-     
+      
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">FORNAVN</label>
@@ -112,7 +112,9 @@ const BuyTicket = ({item}) => {
     <div className="approve">
      <button><Link to={`/thank`}>GODKEND BESTILLING</Link></button>
     </div>
-    </>
+    
+  </>
+
   );
 };
 

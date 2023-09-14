@@ -38,7 +38,7 @@ export default function Header() {
                    <li className="header__menu">SKUESPILLERE</li>
                  </Link>
                  <Link to="/log" className="items">
-                   <li className="header__menu">NLogin</li>
+                   <li className="header__menu">Login</li>
                  </Link>
                    </ul>
         </nav>

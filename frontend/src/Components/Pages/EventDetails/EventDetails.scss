@@ -2,41 +2,42 @@
 @use "../../../Assets/Styled/Fonts.scss" as s;
 
 .ED-card {
-     margin-top: 0rem;
-     margin: auto;
-     width: 70%;
-     padding: 10px;
-     margin: 0 auto;
-     display: grid;
-     border: 2px solid #AD7A51;
-     color: y.$Tertiær;  
-     
+    width: 70%;
+    display: grid;
+    border: 2px solid #AD7A51; 
 }
 .ED-card img {
-     width: 100%;
-     display: flex;
-     border: 2px solid #AD7A51;
+    width: 100%;
+    border: 10px solid #AD7A51;
 }
 .ED-card  h2 {
-     font-size: 18px;
-     padding-left: 870px;
-     margin-bottom: 10px;
-   
-     
+     font-size: 16px;
+     padding-left: 51rem;
+     margin-bottom: 15px;  
 }
+.ED-card h1{
+    color: y.$Sekundær;
+}
+
 
 .ED-card  h5{
      font-size: 16px;
      margin-top: 20px;
+     font-weight: lighter;
+     text-transform: uppercase
 }
+
 .more button{
      
      bottom:60px;
      position:absolute;
+     
 }
 .buyT button  {
     display: flex;
     padding: 0.5em 1em;
+    margin-left: 52rem;
+    margin-bottom: 20pz;
     color: white;
     background-color: y.$Primær;
     justify-content: space-between;
@@ -50,8 +51,6 @@
       margin-top: 1em;
       padding: 0.5em 1em;
       background-color: y.$Primær;
-      color: white;
-      border: none;
       font-size: 1.2em;
       font-weight: bold;
       a{
@@ -60,125 +59,112 @@
       }
     }
    }
-   .paragraph { color: y.$Sekundær;
-     font-weight: 100;
-     font-size: 12px;
-     padding: 10px;
+  //  .paragraph { color: y.$Sekundær;
+  //    font-weight: 100;
+  //    font-size: 12px;
+  //    padding: 10px;
 
-   }
+  //  }
    .para {
      font-size: 16px;
      margin: 0;
+     color: y.$Sekundær;
    }
-   .EDF {
-     margin-top: 0rem;
-     margin: auto;
-     width: 100%;
-     padding: 10px;
-     margin: 0 auto;
-     display: grid;
-     border: 2px solid #AD7A51;
-     color: y.$Tertiær;
-   }
+  
 .EDF { background-color: y.$Sekundær;
+  
 }
 
  
 .EDF input[type="text"]
  {
-  width: 20%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  display: table-cell;
-    
+  width: 100%;
+  padding: 10px;  
 }
 .EDF input[type="password"] 
 {
-  width: 20%;
+  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  
+ 
 }
 .options {
-     display: grid;
-     padding-left: 5px;
-    vertical-align: bottom
+     
+     margin-right: 40rem;
+    
 }
- .Edb button{
+ .EDD button{
      background-color: green;
-     width: 20%;
+     width: 10%;
      padding: 10px;
-     float: right;
-     display: inline;
-    
-    
-
+     margin-left: 12rem;
+     display: inline-block;
+  
+     
 }
 .whiet{
      color: #fff;
+}
+article {
+  width: 100%;
+  display: grid;
+  color: y.$Primær;
+  border: 2px solid #AD7A51;
+
 }
 .Actors {
      margin: 1em;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
      gap: 1em;
-     .border {
-     //   border: 1px solid c.$secondary;
-       img {
-         object-fit: cover;
-         max-width: 100%;
-         border: none;
-       }
-       h4 {
-         text-align: center;
-         margin-top: 0.5em;
-         margin-bottom: 0.5em;
-         font-size: 1.2em;
-         font-weight: 400;
-     //     color: c.$primary;
-       }
+     
+  img {
+      border: none;
      }
-}
-
-   
-
+     }
 
 @media screen and (max-width: 768px) {
 
-     .ED-card {
-          margin-top: 0rem; 
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+.ED-card {
+      margin-top: 0rem; 
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
      }
-     .ED-card img {
-          max-height: 250px;
-          max-width: 250px;
-          position: relative;
-          display: flex;
-          border: 2px solid #AD7A51;
+.ED-card img {
+      position: relative;
+      display: flex;
+          
      }
-     .EDF {
-          max-height: 250px;
-          max-width: 250px;
-          
-         
-          display: grid;
-          border: 2px solid #AD7A51;
-          color: y.$Tertiær;
-          
-        }
-        .paragraph {
-          padding: 10px;
-          Width: 100%;
-        }
+.EDF {
+    display: grid;
+    width: 100%;
+    color: y.$Tertiær;     
+    }
+    .EDF p {
+      margin-left: 20rem;
+      font-size: 13px;
+    }
+    .options{
+      width: 20%;
+      margin-left: 20rem;
+    }
+.paragraph {
+      padding: 10px;
+      Width: 100%;
+      }
       
-        .para {
-          font-size: 16px; 
-          margin: 5px 0; 
-        }
-        .Edb button{
-          width: 30%;
-        }
+.para {
+    font-size: 16px; 
+    margin: 5px 0; 
+     }
+.EDD button{
+      width: 10%;
+      margin-left: 20rem;
+      }
+  article {
+      width: 100%;
+      }
+.Actors img {
+       width: 100%;
+      }
+      
 }

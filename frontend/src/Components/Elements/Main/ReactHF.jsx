@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
-const RHF = () => {
+const REACTHF = () => {
   const { handleSubmit, control } = useForm();
 
   const onSubmit = (data) => {
@@ -35,4 +35,4 @@ const RHF = () => {
   );
 };
 
-export default RHF;
+export default REACTHF;

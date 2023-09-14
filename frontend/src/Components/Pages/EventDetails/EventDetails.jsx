@@ -107,7 +107,8 @@ function EventDetails() {
       {data && (
         <div className='ED-image'>
           <h5>{formatEventDate(data.startdate, data.stopdate)}</h5>
-          <h2>price: {data.price}</h2>
+          <h2> BILLETPRIS:{data.price}DKK</h2>
+<hr />
           <h1>{data.title}</h1>
           <div className='More'>
             <div className='buyT'>
@@ -116,7 +117,7 @@ function EventDetails() {
               </Link>
             </div>
           </div>
-          {data.genre ? <p>{data.genre.name}</p> : null}
+          <h4>{data.genre ? <p>{data.genre.name}</p> : null}</h4>
           <br />
           <div className='paragraph'>
             <p className='para'>{data.description}</p>
@@ -131,7 +132,7 @@ function EventDetails() {
 
           {/* ACTORS SECTION START */}
           <section className='Actors'>
-          {actorData.slice(0, 4).map((actor) => (
+          {actorData.slice(1, 5).map((actor) => (
               <article  key={actor.id}>
                 <figure>
                   {actor.image && (
@@ -166,11 +167,16 @@ function EventDetails() {
               {/* onSubmit={handleSubmit}  */}
               <div className="options">
                 <input type="text" name="username" />
-                <input name="password" type="password" />
-                <div className="header__menu">
-                  <button className="items" type="submit">login</button>
                 </div>
-              </div>
+
+                <div className="options">
+                <input type="password" name="password"  />
+                </div>
+
+                <div className="EDD">
+                  <button type="submit">login</button>
+                </div>
+              
             </form>
           )}
         </div>

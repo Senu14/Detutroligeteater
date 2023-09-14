@@ -1,168 +1,102 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from "@tanstack/react-query";
-import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../Providers/AuthProvider';
-import './Profile.scss';
+import axios from 'axios';
+// import Reservations from './Reservations'
+// import Reviews from './Reviews';
+// import Favorites from './Favorites';
+import { AuthContext, AuthProvider, useAuth } from '../../Providers/AuthProvider';
 
-
-
-// // We define the fetch functions before using them in useQuery hooks
-// const fetchReservations = async (userId, token) => {
-//   try {
-// //We set up the headers with the token
-//     const headers = {
-//       Authorization: `Bearer ${token}`,
-//     };
-
-//     const response = await axios.get(`http://localhost:4000/reservations/${userId}`, { headers });
-
-//     // if (response.status !== 200) { // Check the status code for success (usually 200)
-//     //   // Add a log for network errors
-//     //   console.error('Network response was not ok');
-//     //   throw new Error('Network response was not ok');
-//     // }
-
-//     const data = response.data; // Use response.data to get the JSON data
-    
-//     // Add a log to show the retrieved data
-//     console.log('Fetched reservations:', data);
-    
-//     return data;
-//   } catch (error) {
-//     // Add a log for any errors that occur during the fetch
-//     console.error('Error fetching reservations:', error);
-//     return [];
-//   }
-// };
-
-
-// // const fetchFavorites = async () => {
-// //   try {
-// //     const response = await axios.get(`http://localhost:4000/favorites`);
-// //     if (!response.ok) {
-// //       throw  new Error('Network response was not ok');
-// //     }
-// //     const data = await response.json();
-// //     return data;
-// //   } catch (error) {
-// //     console.error('Error fetching favorites:', error);
-// //     return [];
-// //   }
-// // };
-
-// // const fetchReviews = async () => {
-// //   try {
-// //     const response = await axios.get(`http://localhost:4000/reviews`);
-// //     if (!response.ok) {
-// //       throw new Error('Network response was not ok');
-// //     }
-// //     const data = await response.json();
-// //     return data;
-// //   } catch (error) {
-// //     console.error('Error fetching reviews:', error);
-// //     return [];
-// //   }
-// // };
-
-function Profile() {
-  const { loginData, setLoginData } = useAuth()
+const Profile = () => {
+ 
   const navigate = useNavigate() 
+  // const [reviews, setReviews] = useState([]);
+  // const [reservations, setReservations] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
+
+  const { loginData, setLoginData } = useAuth();
+  console.log("loginData:", loginData);
 
 
-  // console.log(loginData);
-  // const [user, setCurrentUser] = useState(null);
+  const userId = loginData && loginData.data && loginData.data.id;
+
+  console.log("userId:", userId);
+
+  useEffect(() => {
+    // Fetch reviews, reservations, and favorites if the user is logged in
+    if (userId) {
+      // Create headers with the authentication token and user ID
+      const headers = {
+        Authorization: `Bearer ${loginData.access_token}`,
+        'X-User-ID': userId,
+      };
 
 
+      // Fetch reviews
+      axios.get(`http://localhost:4000/reviews`, { headers })
+        .then(response => {
+          console.log("Reviews data:", response.data);
+          // setReviews(response.data);
+        })
+        .catch(error => console.error('Error fetching reviews:', error));
 
+      // Fetch reservations
+      axios.get(`http://localhost:4000/reservations`, { headers })
+        .then(response => {
+          console.log("Reservations data:", response.data);
+          // setReservations(response.data);
+        })
+        .catch(error => console.error('Error fetching reservations:', error));
 
-//   const { data: reservations } = useQuery(['reservations'], () => fetchReservations(user?.id)); // Pass 'user?.id' to the function
-//   // const { data: favorites } = useQuery(['favorites'], fetchFavorites);
-//   // const { data: reviews } = useQuery(['reviews'], fetchReviews);
-  
-//   const storedToken = localStorage.getItem('accessToken'); // Retrieve the token from storage
+      // Fetch favorites
+      axios.get(`http://localhost:4000/favorites`, { headers })
+        .then(response => {
+          console.log("Favorites data:", response.data);
+          // setFavorites(response.data);
+        })
+        .catch(error => console.error('Error fetching favorites:', error));
+    }
+  }, [userId]);
 
-//   useEffect(() => {
-//     // Check if the token is available in storage
-//     if (storedToken) {
-//       // Retrieve the user ID from storage if needed
-//       const userId = localStorage.getItem('currentUserId'); // Retrieve the user ID from storage if needed
-//       console.log('user id :',userId)
-//       // Set the current user in your state
-//       setCurrentUser({ id: userId });
-
-//       // Fetch reservations using the stored token and user ID
-//       fetchReservations(userId, storedToken);
-//     } else {
-// // Handle the case where the token is not available
-//       // console.error('Token not available. Please log in.');
-//     }
-//   }, [storedToken]);
-
+// new code of mine 
 //This is logout function
-const Logout = () => {
-  console.log(1234);
-  sessionStorage.removeItem('token')
-  navigate("/")
+ const Logout = () => {
+   sessionStorage.removeItem('token')
+   navigate("/Profile")
   
-  //An empty string(loginData) is equal to false, 
-  //so then i can log in by pressing the logout button 
-  setLoginData('')
+//An empty string(loginData) is equal to false, 
+//so then i can log in by pressing the logout button 
+   setLoginData('')
   
-   }
 
 
   return (
-
-    
-    <div className='PR-card'>
-      <h1>MIN SIDE</h1>
-{/* Display Reservations */}
-
-  <h2>Reservations</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Date & Time</th>
-        <th>Show</th>
-        <th>Scenes</th>
-        <th>Amount</th>
-        <th>Price</th>
-        <th>Edit</th>
-      </tr>
-      {/* <p>Du er logget in på som:{loginData.user}</p> */}
-    </thead>
-    {/* <tbody>
-      {reservations ? (
-        reservations.map((reservation) => (
-          <tr key={reservation.id}>
-            <td>{reservation.id}</td>
-            <td>{reservation.firstname}</td>
-            {/* <td>{reservation.show}</td>
-            <td>{reservation.scenes}</td>
-            <td>{reservation.amount}</td>
-            <td>{reservation.price}</td> */}
-          {/* </tr>
-        ))
+    <div>
+       {!loginData && !loginData.username ? (
+//         <>
+      <h1>Profile</h1>
       ) : (
-        <tr>
-          <td colSpan="6">Loading reservations...</td>
-        </tr>
-      )}
-    </tbody> */} 
-  </table>
-  
-  <div className="sb">
-        <p>Du er logget ind</p>
-        <br />
-        <button onClick={() => Logout()}>Log ud</button>
-      </div>
-</div>
+       // Vis logindata hvis bruger er logget ind
+       <div >
+         <p>
+           Du er logget ind som: {`${loginData.user.firstname} ${loginData.user.lastname} `}
+         </p>
+         <button onClick={Logout}>
+         <Link to={`/log`}>
+         Logout
+         </Link></button>
+       </div>
+     )}
+      {/* <h2>Reservations</h2>
+      <Reservations reservations={reservations} />
 
+      <h2>Reviews</h2>
+      <Reviews reviews={reviews} />
 
-    
-   
+      <h2>Favorites</h2>
+      <Favorites favorites={favorites} /> */}
+    </div>
   );
+};
 }
 
 export default Profile;
