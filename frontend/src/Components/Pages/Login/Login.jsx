@@ -8,7 +8,6 @@ import { useAuth } from '../../Providers/AuthProvider';
 
 
 const Login = () => {
-
 const { loginData, setLoginData } = useAuth()   // A hook from AuthProvider //
 const navigate = useNavigate()
 const { register, handleSubmit, formState: { errors } } = useForm();
@@ -23,28 +22,22 @@ const onSubmit = async form => {
     const formData = new URLSearchParams()
     formData.append("username", form.username)
     formData.append("password", form.password)
-//Here using the spread operator(...)
-  // console.log(...formData);
+//Here using the spread operator(...formData)
+  console.log(formData);
 
-
-  try{
-      const result = await axios.post("http://localhost:4000/login", formData) 
-      if(result.data){
- // Save JSON in our sessionstorage
-        sessionStorage.setItem("token",JSON.stringify(result.data))
-        setLoginData(result.data)
-      }
+  try {
+    // Kalder API
+    const result = await axios.post("http://localhost:3000/login",formData)
+      setLoginData(result.data.access_token)  
+   
 
 //Catch for error message//    
     }catch(error) { 
       console.log(`kunne ikke logge ind: ${error}`);// This is error message//
     }
-
-
   }
 
-
-//Creating a function that can connect with the storage in the browser
+  //Creating a function that can connect with the storage in the browser
   const handleSessionData = data =>{
     if (data) {
       sessionStorage.setItem('token',  JSON.stringify(data))
@@ -53,23 +46,23 @@ const onSubmit = async form => {
     }
   }
 
- //This is logout function
+
+   //This is logout function
  const Logout = () => {
-sessionStorage.removeItem('token')
-
-//An empty string(loginData) is equal to false, 
-//so then i can log in by pressing the logout button 
-setLoginData('')
-
- }
-
+  sessionStorage.removeItem('token')
+  
+  //An empty string(loginData) is equal to false, 
+  //so then i can log in by pressing the logout button 
+  setLoginData('')
+  
+   }
+  
 
   return (
      <>
+     <div>
 {/* Using ternary operator */}
-    
-    {!loginData  && !loginData.username ? (
-
+{!loginData || !loginData.username ? (
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1>LOGIN</h1>
      
@@ -90,6 +83,7 @@ setLoginData('')
             {errors.password && <span className="error">
               Du skal indtaste din adgangskode</span>} 
         </div>
+        
         <div className="sb">
         <button type="submit">
         <Link to={`/Profile`}>
@@ -98,17 +92,15 @@ setLoginData('')
          
           </div>
       </form>
-    ): (
-     // Vis logindata hvis bruger er logget ind
-     <div className="sb">
-       
-        <br />
-       
-         
-          </div>
- )}
+        ) : (
+          <div className="sb">
+          
+         </div>
+            )}
+   </div>
   </>
   )
-}
+};
 
-export default Login
+export default Login;
+

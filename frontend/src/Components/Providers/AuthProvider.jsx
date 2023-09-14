@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom auth hook
+// Custom provider auth hook
 const useAuth = () => useContext(AuthContext);
 
 export { AuthContext, AuthProvider, useAuth };

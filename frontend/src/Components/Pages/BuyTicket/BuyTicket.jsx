@@ -89,6 +89,7 @@ const BuyTicket = ({}) => {
           <br />
           
                </div>
+               
          
         </div>
 

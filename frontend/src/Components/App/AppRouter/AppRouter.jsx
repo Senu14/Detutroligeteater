@@ -5,7 +5,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import Forside from '../../Pages/Forside/Forside';
 import ForestillingerEvents from '../../Pages/ForestillingerEvents/ForestillingerEvents';
 import Skuespillere from '../../Pages/Skuespillere/Skuespillere';
-import Profile from '../../Pages/Profile/Profile';
+import Profile from '../../Pages/Profile2/Profile';
 import EventDetails from '../../Pages/EventDetails/EventDetails';
 import BuyTicket from '../../Pages/BuyTicket/BuyTicket';
 import ActorDetails from '../../Elements/FatchCards/ADetails/ActorDetails';
