@@ -13,11 +13,9 @@ function ActorDetails() {
         const fetchActorDetails = async ()=>{
             try{
                 const response = await axios.get(`http://localhost:4000/actors/${id}`)
-                // const actorDataRes = await axios.get(
-                //     `http://localhost:4000/actors?attributes=id, name, image`
-                //   );
+                
                 console.log('here it is')
-                // const fetchedData = await response.json();
+// const fetchedData = await response.json();
                 setData(response.data);
             }catch (err) {
                 console.log(err)

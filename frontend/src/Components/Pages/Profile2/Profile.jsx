@@ -1,32 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './Profile.scss'
 import { AuthContext, AuthProvider, useAuth } from '../../Providers/AuthProvider';
 
-const Profile = () => {
+
+const formatEventDate = (startDate) => {
+  const options = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    time: 'numeric',
+  };
+
+  const formattedStartDate = new Date(startDate).toLocaleDateString('da-DK', options);
+  
+
+  return `${formattedStartDate}`;
+};
+
+
+
+
+const Profile = ({review}) => {
   const navigate = useNavigate();
-  const [reservations, setReservations] = useState([]);
+  const [reviews, setreviews] = useState([]);
   const { loginData, setLoginData } = useAuth();
 
   console.log('login :', loginData)
 
-  const Logout = () => {
-    sessionStorage.removeItem('token');
-    navigate("/");
-    setLoginData('');
-  };
+ 
 
   useEffect(() => {
-    // Fetch reservations
+    // Fetch reviews
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/events/`)
-        // , {
-        //   headers: {
-        //     Authorization: `Bearer ${loginData}`,
-        //   },
-        // }  
-        // );
+        const response = await axios.get(`http://localhost:4000/events`)
+     
+
         console.log("events data:", response.data);
         let reserv = [];
         for (let i=0;i<response.data.length;i++){
@@ -39,7 +50,7 @@ const Profile = () => {
           }
         } 
         
-        setReservations(reserv);
+        setreviews(reserv);
       } catch (error) {
         console.error('Error fetching events:', error);
       }
@@ -48,32 +59,58 @@ const Profile = () => {
     fetchData();
   }, [loginData]);
 
+ 
+//This is logout function
+const Logout = () => {
+  // Removes login info from session storage
+      sessionStorage.removeItem("token")
+  //An empty string(loginData) is equal to false, 
+  //so then i can log in by pressing the logout button 
+      setLoginData("")
+      
+    }
+
+  
+
+
   return (
-    <div className='thank-card'>
-      {!loginData || !loginData.username ? (
+    <div className='PR-card'>
         <>
           <h2>Min Side</h2>
-          {reservations.map((reservation) => (
-            <div key={reservation.id}>
-              <h3>{reservation.firstname}</h3>
-              <h3>{reservation.lastname}</h3>
-              <h3>{reservation.email}</h3>
-              <h3>{reservation.address}</h3>
-              <h3>{reservation.zipcode}</h3>
-              <h3>{reservation.event.title}</h3>
-              <h3>{reservation.event.price}DKK</h3>
-            </div>
+          {reviews && reviews.map((review) => (
+            <div className="Like"key={review.id}>
+              <div className="Review-card" >
+                <h4>DATO & TID</h4>
+                <h3>{formatEventDate(review.created_at)}</h3>
+              </div>
+        
+              <div className="Review-card">
+              <h4>FORESTILLING</h4>
+              <h3>{review.event.title}</h3>
+              </div>
+
+              <div className="Review-card">
+              <h4>SCENE</h4>
+              <h3>{review.event.stage.name}</h3> 
+              </div>
+             
+              <div className="Review-card">
+              <h4>ANTAL</h4>
+              <h3>{review.event.event_id}</h3>
+              </div>
+
+              <div className="Review-card">
+              <h4>PRIS</h4>
+              <h3>{review.event.price}DKK</h3> 
+              </div>
+
+              <div className="Review-card">
+                <h4>REDIGER</h4>
+                </div>
+              
+                </div>
           ))}
         </>
-      ) : (
-        // Vis logindata hvis bruger er logget ind
-        <div>
-          <p>
-          {`Du er logget ind som ${loginData.user.firstname} ${loginData.user.lastname} `}
-          </p>
-          <button onClick={Logout}>Log ud</button>
-        </div>
-      )}
      
     </div>
     
