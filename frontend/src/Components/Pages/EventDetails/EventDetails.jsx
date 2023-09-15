@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './EventDetails.scss';
+import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ReviewForm from '../../Elements/FatchCards/WReview/ReviewForm';
+import { useAuth } from '../../Providers/AuthProvider';
+
 
 const formatEventDate = (startDate, stopDate) => {
   const options = {
@@ -34,16 +37,69 @@ function EventDetails() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authToken, setAuthToken] = useState(null);
   const [actorData, setActorData] = useState([]);
+  const navigate = useNavigate()
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
+  const { loginData, setLoginData } = useAuth();
+
+    const onSubmit = async form => {
+      const formData = new URLSearchParams()
+      formData.append("username", form.username)
+      formData.append("password", form.password)
+  //Here using the spread operator(...)
+    console.log(formData);
+    try{
+      const result = await axios.post("http://localhost:4000/login", formData) 
+      if(result.data){
+        console.log(result)
+ // Save JSON in our sessionstorage
+        sessionStorage.setItem("token", JSON.stringify(result.data.access_token))
+        setLoginData(result.data.access_token)
+      navigate("/Profile")
+
+      }
+
+//Catch for error message//    
+    }catch(error) { 
+      console.log(`kunne ikke logge ind: ${error}`);// This is error message//
+    }
+
+
+  }
+
+
+  const postReviews = async (form)=>{
+    let data = null
+    const response = await axios.post(`http://localhost:4000/reviews`,{...data})
+  }
+
+  const fetchEventDetails = async () => {
+    try {
+      const [eventResponse, reviewsResponse] = await Promise.all([
+        axios.get(`http://localhost:4000/events/${id}`, {
+          headers: {
+            Authorization: `Bearer ${authToken}`, // Include the auth token in the request headers
+          },
+        }),
+        axios.get(`http://localhost:4000/reviews/${id}`, {
+          headers: {
+            Authorization: `Bearer ${authToken}`, // Include the auth token in the request headers
+          },
+        }),
+      ]);
+
+      setData(eventResponse.data);
+      setReviews(reviewsResponse.data);
+
+      // Add a console log to check the fetched reviews
+      console.log('Fetched reviews:', reviewsResponse.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
+  
   useEffect(() => {
-    // Retrieve the authentication token from local storage
-    const authToken = localStorage.getItem('authToken');
-    setAuthToken(authToken);
-
-    // Retrieve the user information from local storage
-    const userString = localStorage.getItem('currentUser');
-    const user = JSON.parse(userString);
-    setCurrentUser(user);
 
     // Fetch actors
     const getData = async () => {
@@ -64,30 +120,7 @@ function EventDetails() {
     getData();
 
     // Fetch event details and reviews
-    const fetchEventDetails = async () => {
-      try {
-        const [eventResponse, reviewsResponse] = await Promise.all([
-          axios.get(`http://localhost:4000/events/${id}`, {
-            headers: {
-              Authorization: `Bearer ${authToken}`, // Include the auth token in the request headers
-            },
-          }),
-          axios.get(`http://localhost:4000/reviews/${id}`, {
-            headers: {
-              Authorization: `Bearer ${authToken}`, // Include the auth token in the request headers
-            },
-          }),
-        ]);
-
-        setData(eventResponse.data);
-        setReviews(reviewsResponse.data);
-
-        // Add a console log to check the fetched reviews
-        console.log('Fetched reviews:', reviewsResponse.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
+    
 
     // Call the fetchEventDetails function
     fetchEventDetails();
@@ -151,26 +184,33 @@ function EventDetails() {
 
           {reviews.map((review) => (
             <div key={review.id}>
-              <h5>{review.User.firstname} {review.User.lastname}</h5>
-              <h5>{review.created_at}</h5>
-              <p className='paragraph'>{review.subject}</p>
+              {/* <h5>{review?.User?.firstname} {review?.User?.lastname}</h5> */}
+              <h5>{review?.created_at}</h5>
+              <h5>{review?.subject}</h5>
+              <h5>{review?.comment}</h5>
+     
             </div>
           ))}
 
-          {currentUser ? (
-            <ReviewForm event_id={id} />
+          {loginData ? (
+            <ReviewForm event_id={id} fetchEventDetails={fetchEventDetails} />
+            // <h3>you are connected</h3>
           ) : (
             // User is not logged in, show the review form
-            <form className='EDF'>
+            <form onSubmit={handleSubmit(onSubmit)} className='EDF'>
               <p className='whiet'>Skriv en anmeldelse</p>
               <p className='whiet'>Du skal være logget ind for at skrive en anmeldelse</p>
               {/* onSubmit={handleSubmit}  */}
               <div className="options">
-                <input type="text" name="username" />
+                <input type="text" name="username" 
+                 {...register('username', { required: true })}/>
                 </div>
 
                 <div className="options">
-                <input type="password" name="password"  />
+                <input type="password" name="password" 
+                {...register('password', { required: true })} />
+                 {errors.password && <span className="error">
+              Du skal indtaste din adgangskode</span>} 
                 </div>
 
                 <div className="EDD">

@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../../Providers/AuthProvider';
 
-function ReviewForm({ event_id }) {
+
+function ReviewForm({ event_id,fetchEventDetails }) {
     const [subject, setSubject] = useState('');
     const [comment, setComment] = useState('');
     const [reviews, setReviews] = useState('')
+    const { loginData, setLoginData } = useAuth();
+
+    
+    
+    
 
     const handleSubmit = async (e) => {
       e.preventDefault();
       console.log('Submit Review button clicked');
     
       try {
-        const userToken = localStorage.getItem('currentUser');
-        console.log('userToken:', userToken); // Log userToken
-    
         // Send a POST request to create a review with the user's token in the headers
         const response = await axios.post('http://localhost:4000/reviews', {
           event_id,
-          user_id: userToken.id, // Include the user_id
+          num_stars: 0, // Include the user_id
           subject,
           comment,
+          date : new Date(),
         }, {
           headers: {
-            Authorization: `Bearer ${userToken}`,
+            authorization: `Bearer ${loginData}`,
           },
         });
-    
+        console.log(response)
+        setComment("");
+        setSubject("");
+        fetchEventDetails();
         // Rest of your code...
       } catch (err) {
         console.error(err);
@@ -59,8 +67,9 @@ function ReviewForm({ event_id }) {
                     onChange={(e) => setComment(e.target.value)}
                 ></textarea>
             </div>
-            <button type="submit">
-            <Link to={`/Profile`}>Send</Link>
+            <button type="submit" >
+            Send
+            {/* <Link to={`/Profile`}>Send</Link> */}
       </button>
         </form>
     );

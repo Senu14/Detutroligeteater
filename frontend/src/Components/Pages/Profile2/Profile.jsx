@@ -1,43 +1,111 @@
+// import React, { useEffect, useState } from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// import { AuthContext, AuthProvider, useAuth } from '../../Providers/AuthProvider';
+
+// const Profile = () => {
+ 
+//   const navigate = useNavigate() 
+//   const [reservations, setReservations] = useState([]);
+//   const { loginData, setLoginData } = useAuth();
+
+//   console.log("loginData:", loginData);
+
+//   //This is logout function
+//  const Logout = () => {
+//      sessionStorage.removeItem('token')
+//      navigate("/")
+//      setLoginData('')
+
+    
+//   useEffect( async () => {
+
+//       // Fetch reservations
+//       try {
+//           const reserv = await axios.get(`http://localhost:4000/reservations/1`, {
+//             headers: {
+//               authorization: `Bearer ${loginData}`,
+//             },
+//           });
+//           console.log("Reservations data:", reserv.data); // Check the data received
+//           setReservations(reserv.data);
+//           console.log("Reservations state after setting:", reservations); // Check the state after setting
+//         } catch (error) {
+//           console.error('Error fetching reservations:', error);
+//         }
+        
+        
+//   }, [loginData]);
+
+//   console.log("Reservations state:", reservations);
+
+  
+
+
+//   return (
+//      <div><h1>ehi a5dem</h1>
+
+//       {/* {!loginData || !loginData.user ? (
+//         <h1>Profile</h1>
+//       ) : (
+//         <div>
+//           <p>
+//             Du er logget ind som: {`${loginData.user.firstname} ${loginData.user.lastname} `}
+//           </p>
+//           <button onClick={Logout}>
+//             <Link to={`/log`}>Logout</Link>
+//           </button>
+//         </div>
+//       )} */}
+//       <h2>Reservations</h2>
+//       {reservations.length === 0 ? (
+//         <p>No reservations found.</p>
+//       ) : (
+//         <ul>
+//           {reservations.map((reservation) => (
+//             <li key={reservation.id}>
+//               <h2>{reservation.email}</h2>
+//             </li>
+//           ))}
+//         </ul>
+//       )}
+//     </div>
+//   );
+
+// };
+// }
+
+// export default Profile;
+
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './Profile.scss'
 import { AuthContext, AuthProvider, useAuth } from '../../Providers/AuthProvider';
 
-
-const formatEventDate = (startDate) => {
-  const options = {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    time: 'numeric',
-  };
-
-  const formattedStartDate = new Date(startDate).toLocaleDateString('da-DK', options);
-  
-
-  return `${formattedStartDate}`;
-};
-
-
-
-
-const Profile = ({review}) => {
+const Profile = () => {
   const navigate = useNavigate();
-  const [reviews, setreviews] = useState([]);
+  const [reservations, setReservations] = useState([]);
   const { loginData, setLoginData } = useAuth();
 
   console.log('login :', loginData)
 
- 
+  const Logout = () => {
+    sessionStorage.removeItem('token');
+    navigate("/");
+    setLoginData('');
+  };
 
   useEffect(() => {
-    // Fetch reviews
+    // Fetch reservations
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/events`)
-     
-
+        const response = await axios.get(`http://localhost:4000/events/`)
+        // , {
+        //   headers: {
+        //     Authorization: `Bearer ${loginData}`,
+        //   },
+        // }  
+        // );
         console.log("events data:", response.data);
         let reserv = [];
         for (let i=0;i<response.data.length;i++){
@@ -50,7 +118,7 @@ const Profile = ({review}) => {
           }
         } 
         
-        setreviews(reserv);
+        setReservations(reserv);
       } catch (error) {
         console.error('Error fetching events:', error);
       }
@@ -59,62 +127,33 @@ const Profile = ({review}) => {
     fetchData();
   }, [loginData]);
 
- 
-//This is logout function
-const Logout = () => {
-  // Removes login info from session storage
-      sessionStorage.removeItem("token")
-  //An empty string(loginData) is equal to false, 
-  //so then i can log in by pressing the logout button 
-      setLoginData("")
-      
-    }
-
-  
-
-
   return (
-    <div className='PR-card'>
-        <>
-          <h2>Min Side</h2>
-          {reviews && reviews.map((review) => (
-            <div className="Like"key={review.id}>
-              <div className="Review-card" >
-                <h4>DATO & TID</h4>
-                <h3>{formatEventDate(review.created_at)}</h3>
-              </div>
-        
-              <div className="Review-card">
-              <h4>FORESTILLING</h4>
-              <h3>{review.event.title}</h3>
-              </div>
+    <div>
+      {loginData && loginData.user && (
+        <div>
+          <p>
+            Du er logget ind som: {`${loginData.user.firstname} ${loginData.user.lastname} `}
+          </p>
+          <button onClick={Logout}>
+            <Link to={`/log`}>Logout</Link>
+          </button>
+        </div>
+      )}
 
-              <div className="Review-card">
-              <h4>SCENE</h4>
-              <h3>{review.event.stage.name}</h3> 
-              </div>
-             
-              <div className="Review-card">
-              <h4>ANTAL</h4>
-              <h3>{review.event.event_id}</h3>
-              </div>
-
-              <div className="Review-card">
-              <h4>PRIS</h4>
-              <h3>{review.event.price}DKK</h3> 
-              </div>
-
-              <div className="Review-card">
-                <h4>REDIGER</h4>
-                </div>
-              
-                </div>
-          ))}
-        </>
-     
+      <h1>Profile</h1>
+      <h2>Reservations</h2>
+      {/* Render reservation data here */}
+      {reservations.map((reservation) => (
+        <div key={reservation.id}>
+          <h3>{reservation.email}</h3>
+          <h3>{reservation.address}</h3>
+          <h3>{reservation.zipcode}</h3>
+          <h3>{reservation.event.title}</h3>
+          <h3>{reservation.event.price}</h3>
+        </div>
+      ))}
     </div>
-    
   );
-  
-      }
+};
+
 export default Profile;
