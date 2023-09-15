@@ -20,9 +20,9 @@ export default function Header() {
     alt="logo"
   />
    <div className="search">
-            <form action="#">
+            <div action="#">
             <input className="search" placeholder="INDAST SOGEORD" type="search" id="search" name="search"></input>
-            </form>
+            </div>
         </div>
      
         <nav>

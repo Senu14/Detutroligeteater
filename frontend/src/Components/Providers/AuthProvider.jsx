@@ -1,26 +1,32 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
+// Initialiserer auth context
 const AuthContext = createContext();
 
+// Definerer Contekst Provider
+// med props.children som tilstandsværdi
 const AuthProvider = ({ children }) => {
-  // use stateHook here //
-  const [loginData, setLoginData] = useState('');
+	const [loginData, setLoginData] = useState('')
 
-  useEffect(() => {
-    if (sessionStorage.getItem("token")) {
-              setLoginData(JSON.parse(sessionStorage.getItem("token")));
-    }
-  }, [children]);
+	// Opdater loginData med data fra sessionstorage hvis det findes
+	useEffect(() => {
+		if(sessionStorage.getItem('token')) {
+			setLoginData(JSON.parse(sessionStorage.getItem('token')))
+		}
+	}, [children])
 
-  return (
-    <AuthContext.Provider value={{loginData, setLoginData}}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
+	// Returner provider
+	// Alle childs af denne får adgang til logindata
+	return (
+		<AuthContext.Provider value={{loginData,setLoginData}}>
+			{children}
+		</AuthContext.Provider>
+	)
+}
 
-// Custom provider auth hook
+// Definerer custom hook
+// Gør at vi nemt kan kalde context
+// Eksempel: const { loginData } = useAuth()
 const useAuth = () => useContext(AuthContext);
 
-export { AuthContext, AuthProvider, useAuth };
-//AuthProvider
+export { AuthContext, AuthProvider, useAuth }

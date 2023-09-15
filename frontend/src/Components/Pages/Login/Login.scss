@@ -1,11 +1,22 @@
 @use "../../../Assets/Styled/Colors.scss" as y;
 @use "../../../Assets/Styled/Fonts.scss" as s;
 
+.New-Form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #AD7A51;
+
+}
 form{
-  width: 100%;
+  width: 40%;
   display: grid;
   justify-content: center;
-  background-color: y,y.$Primær;;
+  background-color: y.$Primær;
 }
 
 label {
@@ -14,14 +25,18 @@ label {
    }
   
    input{
-     width:250px;
+     width:200px;
+     margin-top: 10px;
      padding: 10px;
      border: 1px solid #ccc;
      border-radius: 5px;
    }
    .sb button{
-    padding: 6px 20px;
-    border-radius: 3px;
+    padding: 6px 7px;
+    margin-right: 32rem;
+    margin-bottom: 10px;
+    
+    background-color: green;
    }
   .sb {
     width: 100%;
@@ -29,3 +44,37 @@ label {
   justify-content: center;
 
    }
+   .Profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+    background-color: y.$Primær;
+    
+  
+    p {
+      margin-bottom: 20px;
+      color:  y.$Tertiær;
+    }
+  
+    .B1, .B2 {
+      button {
+       
+        color: #fff;
+        border: none;
+        background-color: green;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
+  
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+  

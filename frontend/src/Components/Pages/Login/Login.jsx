@@ -6,101 +6,97 @@ import { useAuth } from '../../Providers/AuthProvider';
 
 
 
-
 const Login = () => {
-const { loginData, setLoginData } = useAuth()   // A hook from AuthProvider //
-const navigate = useNavigate()
-const { register, handleSubmit, formState: { errors } } = useForm();
+  // Destructor loginData + setter fra useAuth
+  const { loginData, setLoginData } = useAuth()
+  // Destructor elementer fra useForm
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-
-
-
-
-
-//Adding an error function med asynchrony 
-const onSubmit = async form => {
+  /**
+   * Kaldes når form submittes
+   * Samler form input values og kalder API endpoint med et POST request
+   * @param {object} form Form som javascript objekt 
+   */
+  const onSubmit = async form => {
+    // Samler data med URLSearchParams API
     const formData = new URLSearchParams()
     formData.append("username", form.username)
     formData.append("password", form.password)
-//Here using the spread operator(...formData)
-  console.log(formData);
 
-  try {
-    // Kalder API
-    const result = await axios.post("http://localhost:3000/login",formData)
-      setLoginData(result.data.access_token)  
-   
-
-//Catch for error message//    
-    }catch(error) { 
-      console.log(`kunne ikke logge ind: ${error}`);// This is error message//
+    try {
+      // Kalder API
+      const result = await axios.post("http://localhost:4000/login",formData)
+      if(result.data) {
+        // Gemmer json retursvar i sessionstorage
+        sessionStorage.setItem("token", JSON.stringify(result.data))
+        // Skriver json retursvar til tilstandsvariabel loginData
+        setLoginData(result.data)  
+      }
+    } catch (error) {
+        console.log(`Kunne ikke logge ind: ${error}`);
     }
   }
 
-  //Creating a function that can connect with the storage in the browser
-  const handleSessionData = data =>{
-    if (data) {
-      sessionStorage.setItem('token',  JSON.stringify(data))
-      setLoginData(data)
-      navigate("/Profile")
-    }
+  /**
+   * Kaldes ved klik på logout knap
+   */
+  const Logout = () => {
+    // Fjerner login info fra session storage
+    sessionStorage.removeItem("token")
+    // Nulstiller tilstandsvariabel
+    setLoginData("")
   }
-
-
-   //This is logout function
- const Logout = () => {
-  sessionStorage.removeItem('token')
-  
-  //An empty string(loginData) is equal to false, 
-  //so then i can log in by pressing the logout button 
-  setLoginData('')
-  
-   }
-  
 
   return (
-     <>
-     <div>
-{/* Using ternary operator */}
-{!loginData || !loginData.username ? (
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>LOGIN</h1>
-     
-        <div>
-            <label htmlFor="username" >Brugernavn:</label>
-            <input  placeholder="Indtast brugernavn" 
-            {...register('username', { required: true })} />
-
-            {errors.username && <span className="error">
-              Du skal indtaste dit brugernavn</span>}
-        </div>
-   
-        <div>
-            <label htmlFor="Adgangskode">Adgangskode:</label>
-            <input  placeholder="Indtast password" 
-            {...register('password', { required: true })} />
-
-            {errors.password && <span className="error">
-              Du skal indtaste din adgangskode</span>} 
-        </div>
-        
-        <div className="sb">
-        <button type="submit">
-        <Link to={`/Profile`}>
-        Login
-          </Link></button>
-         
+    <div className="New-Form">
+    {/* Using ternary operator */}
+    {!loginData && !loginData.username ? (
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div>
+                <label htmlFor="username" ></label>
+                <input  placeholder="Indtast brugernavn" 
+                {...register('username', { required: true })} />
+    
+                {errors.username && <span className="error">
+                  Du skal indtaste dit brugernavn</span>}
+            </div>
+       
+            <div>
+                <label htmlFor="Adgangskode"></label>
+                <input  placeholder="Indtast password" 
+                {...register('password', { required: true })} />
+    
+                {errors.password && <span className="error">
+                  Du skal indtaste din adgangskode</span>} 
+            </div>
+            
+            <div className="sb">
+            <button type="submit">LOGIN</button>
           </div>
-      </form>
-        ) : (
-          <div className="sb">
-          
-         </div>
-            )}
-   </div>
-  </>
+        </form>
+      ) : (
+        // Vis logindata hvis bruger er logget ind
+        <div className="Profile">
+          <p>
+            {`Du er logget ind som: ${loginData.user.firstname} ${loginData.user.lastname} `}
+          </p>
+
+
+          <div className="B1">
+    <button onClick={Logout}>
+      <Link to={`/`}>LOGOUT</Link>
+    </button>
+  </div>
+
+  <div className="B2">
+    <button onClick={Logout}>
+      <Link to={`/Profile`}>MIN SIDE</Link>
+    </button>
+  </div>
+        </div>
+      )}
+    </div>
   )
-};
+}
 
-export default Login;
-
+export default Login
