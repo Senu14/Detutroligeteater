@@ -4,14 +4,14 @@ import styled from 'styled-components';
 export const HeroWrapperStyle = styled.div `
      margin-top: 0rem;
 .hero-image{
-      margin: auto;
-      width: 980px;
-      height: 297px;
-      display: flex;
-      align-items:flex-end;
-      left: -90px;
-      border: 2px solid #AD7A51;
-      margin-top: 30px;
+     margin: auto;
+     width: 980px;
+     height: 297px;
+     display: flex;
+     align-items:flex-end;
+     left: -90px;
+     border: 2px solid #AD7A51;
+     margin-top: 30px;
      }
     
 .contents{

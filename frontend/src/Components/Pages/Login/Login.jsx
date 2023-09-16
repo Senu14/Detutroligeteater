@@ -3,6 +3,7 @@ import './Login.scss';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../Providers/AuthProvider';
+import { useState, useEffect } from "react";
 
 
 
@@ -11,6 +12,7 @@ const Login = () => {
   const { loginData, setLoginData } = useAuth()
   // Destructor elementer fra useForm
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const [userDetails, setUserDetails] = useState(null);
 
   /**
    * Kaldes når form submittes
@@ -26,14 +28,33 @@ const Login = () => {
     try {
       // Kalder API
       const result = await axios.post("http://localhost:4000/login",formData)
+      console.log("the data is ", result)
       if(result.data) {
         // Gemmer json retursvar i sessionstorage
         sessionStorage.setItem("token", JSON.stringify(result.data))
         // Skriver json retursvar til tilstandsvariabel loginData
-        setLoginData(result.data)  
+        setLoginData(result.data)
       }
     } catch (error) {
-        console.log(`Kunne ikke logge ind: ${error}`);
+      console.log(`Kunne ikke logge ind: ${error}`);
+    }
+  }
+  
+  console.log("the form of it is ",loginData)
+  useEffect(() => {
+    // Fetch user details when loginData changes or when component mounts
+    if (loginData ) {
+      fetchUserDetails(loginData.user_id);
+    }
+  }, [loginData]);
+
+  const fetchUserDetails = async (userId) => {
+    try {
+      const response = await axios.get(`http://localhost:4000/users/${userId}`);
+      console.log('User details response:', response.data);
+      setUserDetails(response.data); // Assuming the API response contains user details
+    } catch (error) {
+      console.error('Error fetching user details:', error);
     }
   }
 
@@ -50,7 +71,7 @@ const Login = () => {
   return (
     <div className="New-Form">
     {/* Using ternary operator */}
-    {!loginData && !loginData.username ? (
+    {!loginData  ? (
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="username" ></label>
@@ -77,10 +98,12 @@ const Login = () => {
       ) : (
         // Vis logindata hvis bruger er logget ind
         <div className="Profile">
-          <p>
-            {`Du er logget ind som: ${loginData.user.firstname} ${loginData.user.lastname} `}
-          </p>
-
+          {userDetails ? (
+            <p>{`Du er logget ind som: ${userDetails.firstname} ${userDetails.lastname}`}</p>
+            
+          ):(
+            <p>loading data</p>
+          )}
 
           <div className="B1">
     <button onClick={Logout}>
@@ -94,7 +117,8 @@ const Login = () => {
     </button>
   </div>
         </div>
-      )}
+      )
+      }
     </div>
   )
 }

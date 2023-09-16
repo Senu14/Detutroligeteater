@@ -33,7 +33,7 @@ label {
    }
    .sb button{
     padding: 6px 7px;
-    margin-right: 32rem;
+    margin-right: 1rem;
     margin-bottom: 10px;
     
     background-color: green;
@@ -76,5 +76,12 @@ label {
         color: inherit;
       }
     }
+  }
+
+  @media (min-width: 768px) {
+    .New-Form{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 900px) {
+    .New-Form { grid-template-columns: repeat(3, 1fr); }
   }
   
