@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap");
+.ED-card {
+  margin-top: 0rem;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  margin: 0 auto;
+  display: grid;
+  border: 2px solid #AD7A51;
+  color: #30454C;
+}
+
+.ED-card img {
+  width: 100%;
+  display: flex;
+  border: 2px solid #AD7A51;
+}
+
+.ED-card h2 {
+  font-size: 18px;
+  padding-left: 870px;
+  margin-bottom: 10px;
+}
+
+.ED-card h5 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.more button {
+  bottom: 60px;
+  position: absolute;
+}
+
+button {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #AD7A51;
+}
+
+.paragraph {
+  color: #AD7A51;
+}
+
+form {
+  background-color: #AD7A51;
+}
+
+.EDF input[type=text] {
+  width: 100%;
+  padding: 10px;
+}
+
+.EDF input[type=password] {
+  width: 10%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.EDF button {
+  background-color: green;
+}
+
+.whiet {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .ED-card {
+    margin-top: 0rem;
+  }
+  .ED-card img {
+    margin: auto;
+    max-width: 180px;
+    display: flex;
+    border: 2px solid #AD7A51;
+  }
+}

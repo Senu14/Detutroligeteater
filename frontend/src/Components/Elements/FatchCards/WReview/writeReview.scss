@@ -1,88 +1,117 @@
-@use "../../../../Assets/Styled/Colors.scss" as y;
-@use "../../../../Assets/Styled/Fonts.scss" as s;
+@use "../../../Assets/Styled/Colors.scss" as y;
+@use "../../../Assets/Styled/Fonts.scss" as s;
 
 .ED-card {
-     margin-top: 0rem;
-     margin: auto;
-     width: 70%;
-     padding: 10px;
-     margin: 0 auto;
-     display: grid;
-     border: 2px solid #AD7A51;
-     color: y.$Tertiær;  
-     
+    width: 70%;
+    display: grid;
+    border: 2px solid #AD7A51; 
 }
-.ED-card img {
-     width: 100%;
-     display: flex;
-     border: 2px solid #AD7A51;
-}
+
+
 .ED-card  h2 {
-     font-size: 18px;
-     padding-left: 870px;
-     margin-bottom: 10px;
-   
-     
+     font-size: 16px;
+     padding-left: 51rem;
+     margin-bottom: 15px;  
 }
+.ED-card h1{
+    color: y.$Sekundær;
+}
+
 
 .ED-card  h5{
      font-size: 16px;
      margin-top: 20px;
+     font-weight: lighter;
+     text-transform: uppercase
 }
-.more button{
-     
-     bottom:60px;
-     position:absolute;
-}
- button  {
-     padding: 10px 10px;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     color: #fff;
-     background-color: y.$Sekundær;
-   }
-   .paragraph { color: y.$Sekundær;
 
-   }
-   form { background-color: y.$Sekundær;
+
+.EDF { 
+  background-color: y.$Sekundær;
+  width: 100%;
 }
+
  
-.EDF input[type="text"]
- {
-  width: 10%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+
 .EDF input[type="password"] 
 {
-     width: 10%;
+  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-
+ 
 }
-.EDF button{
-     background-color: green;
 
+ .EDD button{
+     background-color: green;
+     width: 10%;
+     padding: 10px;
+     margin-left: 12rem;
+     display: inline-block;
+}
+.EDF p {
+  margin-right: 2rem;
+  font-size: 13px;
 }
 .whiet{
      color: #fff;
 }
 
-   
 
 
 @media screen and (max-width: 768px) {
 
-     .ED-card {
-          margin-top: 0rem;  
+.ED-card {
+      margin-top: 0rem; 
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
      }
-     .ED-card img {
-          margin: auto;
-          max-width: 180px;
-          display: flex;
-          border: 2px solid #AD7A51;
+
+.EDF {
+    display: grid;
+    width: 100%;
+    color: y.$Tertiær; 
+      
+    }
+    .EDF p {
+      margin-left: 1rem;
+      font-size: 10px;
+    }
+    .options{
+     margin-left: 28rem; 
+     width: 100%; 
+  
+    }
+    .EDF input[type="text"]
+ {
+  width: 15%;
+  padding: 10px;  
+}
+.EDF input[type="password"] 
+{
+  width: 15%;
+  padding: 10px;
+ 
+}
+
+      
+.para {
+    font-size: 16px; 
+    margin: 5px 0; 
      }
+.EDD {
+  button{
+    width: 10%;
+    margin-left: 30rem;
+    padding: 4px 5px;
+    }
+
+}
+
+  article {
+      width: 100%;
+      }
+.Actors img {
+       width: 100%;
+      }
+      
 }
