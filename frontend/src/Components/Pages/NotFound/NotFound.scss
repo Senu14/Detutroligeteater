@@ -1,0 +1,13 @@
+@use "../../../Assets/Styled/Colors.scss" as y;
+@use "../../../Assets/Styled/Fonts.scss" as s;
+
+.Not-card {
+     margin: auto;
+     width: 70%;
+     padding: 10px;
+    text-align: center;
+     color: y.$Tertiær;
+     border: 2px solid #AD7A51;
+}
+
+

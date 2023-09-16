@@ -31,7 +31,7 @@ const ActorsList = ({item}) => {
     
       
       <button type="submit">
-      <Link to={`/actor/${item.id}`}>LÆS MERE</Link>
+      <Link to={`/actors/${item.id}`}>LÆS MERE</Link>
         </button>
      
     </div>

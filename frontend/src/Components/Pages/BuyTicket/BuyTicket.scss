@@ -2,48 +2,58 @@
 @use "../../../Assets/Styled/Fonts.scss" as s;
 
 .container {
-  
-     max-width: 600px;
+     width: 70%;
      margin: 0 auto;
+     display: flex;
      padding: 20px;
-     
-    
+     justify-content: center;
      border: 2px solid #AD7A51;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   
+   }
+   .Buy-Form {
+    width:35%;
+    // margin-left: 18rem;
+   }
+   .BY-card {
+    width:35%;
+
+   }
+   span {
+   float: left;
+   font-weight: lighter;
+   position: relative;
+    
+   }
+   .min-para{
+    margin-bottom: 3rem;
    }
    
-   .form-group {
-     margin-bottom: 20px;
-   }
    
    label {
      display: block;
-     font-weight: bold;
+     font-weight: 100;
+   
    }
    
-   input[type="text"],
+   .Buy-group input[type="text"],
    input[type="email"],
    input[type="password"] {
-     width: 100%;
-     padding: 10px;
-     border: 1px solid #ccc;
+     width: 30%;
+     padding: 8px;
+    
     
    }
    
-   .approve button {
-    background-color: y.$Tertiær;
+   .BuyB button{
+     background-color: y.$Primær;
      color: #fff;
-     padding: 10px 10px;
+     padding: 7px 10px;
      border: none;
     
      cursor: pointer;
    }
    
-   .image-container {
-     margin-top: 20px;
-     text-align: center;
-   }
-   
+  
  
    input,
 label {
