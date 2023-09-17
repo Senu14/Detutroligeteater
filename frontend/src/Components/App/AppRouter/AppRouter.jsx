@@ -35,7 +35,7 @@ const AppRouter = () => {
           <Route path= "/ForestillingerEvents" element={<ForestillingerEvents />} />
           <Route path="/Skuespillere" element={<Skuespillere/>} />
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/buy" element={<BuyTicket/>} />
+          <Route path="/buy/:id" element={<BuyTicket/>} />
           <Route path="/thank" element={<ThankYou/>} />
           <Route path="/write" element={<ReviewForm/>} />
           <Route path="/event/:id" element={<EventDetails/>} />

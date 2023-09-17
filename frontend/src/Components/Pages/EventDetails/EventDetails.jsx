@@ -54,7 +54,7 @@ const { loginData, setLoginData } = useAuth();
 // Save JSON in our sessionstorage
       sessionStorage.setItem("token", JSON.stringify(result.data.access_token))
       setLoginData(result.data.access_token)
-    navigate("/Profile")
+    navigate(`/event/${id}`)
 
     }
 
@@ -143,7 +143,7 @@ useEffect(() => {
           <h1>{data.title}</h1>
           <div className='More'>
             <div className='buyT'>
-              <Link to="/Buy">
+              <Link to={`/Buy/${id}`}>
                 <button type="submit">KØB BILLET</button>
               </Link>
             </div>

@@ -3,7 +3,7 @@ import Header from './Components/Partials/Header/Header';
 import AppRouter from './Components/App/AppRouter/AppRouter';
 import Footer from './Components/Partials/Footer/Footer';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import './App.css';
+
 
 const queryClient = new QueryClient();
 

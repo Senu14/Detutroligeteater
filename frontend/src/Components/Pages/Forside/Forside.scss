@@ -19,7 +19,7 @@
     border: 7px solid #AD7A51;
  
    }
-.see-More {
+.see-More button {
   color: #fff;
   bottom:160px;
   right: -110px;
@@ -28,18 +28,10 @@
   border-radius: 5px;
   cursor: pointer;
   position:absolute;
-
+  background-color: y.$Primær;
+  
 }
-//  {
-//   color: y.$Tertiær;
 
-// }a
-.see-More button {
-  border: #fff;
- 
-  padding: 10px 20px;
-
-}
 
 @media screen and (max-width: 760px){
  
