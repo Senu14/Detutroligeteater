@@ -1,7 +1,7 @@
 @use "../../../../Assets/Styled/Colors.scss" as y;
 @use "../../../../Assets/Styled/Fonts.scss" as s;
 
-.ED-card {
+.ACard {
      display: flex;
      flex-direction: column; 
      margin: auto;
@@ -11,6 +11,12 @@
      display: grid;
      border: 2px solid #AD7A51;
      color: y.$Tertiær;
+     img {
+          max-width: 278px;
+          
+          height: auto;
+          display: flex;
+     }
 }
 p h3{
      font-family: s.$fontTitillium;
@@ -22,12 +28,7 @@ h2{
      color: #D39D5B;
      font-weight: 200;
 }
-// img {
-//      max-width: 278px;
-//      border: 13px solid #AD7A51;
-//      height: auto;
-//      display: flex;
-// }
+
 .text {
      font-size: 26px;
      color: y.$Primær;
@@ -41,7 +42,7 @@ h2{
      } 
 
 @media screen and (max-width: 768px){
-     .ED-card{
+     .ACard{
           margin: auto;
           display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

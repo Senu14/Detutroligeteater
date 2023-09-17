@@ -34,7 +34,7 @@ const EventList = ({ item }) => {
           
         <br />
         <button className="bt2" type="submit">
-        <Link to={`/buy`} >
+        <Link to={`/Buy/${item.id}`} >
         KØB BILLET
           </Link> 
        </button>

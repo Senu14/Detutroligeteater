@@ -24,6 +24,9 @@ const ConfirmOrder = ({ formDatae }) => {
       console.log("Reservation successful:", response.data);
     } catch (error) {
       console.error("Error creating reservation:", error);
+      if (error.response) {
+        console.error("Error response data:", error.response.data);
+      }
     }
   };
 
@@ -35,7 +38,6 @@ const ConfirmOrder = ({ formDatae }) => {
   return (
 
     <div className="COrder">
-     
       <h2>Godkend order</h2>
       <hr />
       <div className="site">
@@ -51,46 +53,41 @@ const ConfirmOrder = ({ formDatae }) => {
         <p>KUNDE:</p>
         <p>
          
-          Fornavn:
-          {/* {formObject.firstname} */}
+          
+          {formObject.firstname}
         </p>
         <p>
-          Efternavn:
-          {/* {formObject.lastname} */}
+         
+         {formObject.lastname}
         </p>
         <p>
-          VEJNAVN & NR:
-          {/* {formObject.address} */}
+         
+          {formObject.address} 
         </p>
         <p>
-          Postnr & BY:
-          {/* {formObject.zipcode} */}
+         
+          {formObject.zipcode} 
         </p>
         <p>
-          city:
-          {/* {formObject.city} */}
+          
+           {formObject.city}
         </p>
         <p>
-          sesats:
-          {/* {formObject.seats} */}
-        </p>
-        {/* Include other form fields as needed */}
+          
+          {formObject.email}
+       </p>
+        
+        
         <p>
-        BILLETTERNE SENDES ELEKTRONISK TIL DIN EMAIL.
+        BILLETTERNE SENDES ELEKTRONISK TIL DIN EMAIL
         </p>
-      </div>
-      <div className="buttons">
+        <div className="buttons">
         {/* <button onClick={onCancel}>Cancel</button> */}
-        <button onClick={onApprove}>TILBAGE</button>
+        <button onClick={onApprove}>Approve</button>
       </div>
-      <div className="buttons">
-        {/* <button onClick={onCancel}>Cancel</button> */}
-        <button onClick={onApprove}>GODKEND BESTILLING</button>
       </div>
       
     </div>
-   
-    
   );
 };
 

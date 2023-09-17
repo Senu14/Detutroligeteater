@@ -24,9 +24,9 @@ const Skuespillere = () => {
        <h2>Skuespillere</h2>
       
        {
-        actors.map((actor, id) => {
+        (actor, id) => {
           return <ActorsList key={id} item={{id: actor.id, image: actor.image, description: actor.description, name: actor.name}} id={actor.id} />;
-        })
+        }
       }
 
       
