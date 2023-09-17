@@ -1,5 +1,6 @@
 import React from 'react'
 import './SeatPicker.scss'
+import { useState } from 'react';
 
 function SeatPicker() {
   const[ value, setValue]  = useState([]);

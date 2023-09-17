@@ -4,9 +4,11 @@ import { Link, useParams } from 'react-router-dom';
 
 
 
-const ActorsList = ({item}) => {
+const ActorsList = ({item, id}) => {
 
-  const {id} = useParams();
+  
+  console.log("this is only id: ",id)
+  const {acotr_id} = useParams();
   return (
     
     <div className='Actors-card'>
@@ -31,7 +33,7 @@ const ActorsList = ({item}) => {
     
       
       <button type="submit">
-      <Link to={`/actors/${item.id}`}>LÆS MERE</Link>
+      <Link to={`/actors/${id}`}>LÆS MERE</Link>
         </button>
      
     </div>

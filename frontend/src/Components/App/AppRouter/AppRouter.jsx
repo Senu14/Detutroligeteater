@@ -14,7 +14,8 @@ import ThankYou from '../../Pages/ThankYou/ThankYou';
 import ReviewForm from '../../Elements/FatchCards/WReview/ReviewForm';
 import Login from '../../Pages/Login/Login';
 import NotFound from '../../Pages/NotFound/NotFound';
-
+import ConfirmOrder from "../../Elements/FatchCards/COrder/ConfirmOrder";
+// import SeatPicker from '../../Pages/SeatPicker/SeatPicker';
 
 //Layouts that wrapped the other pages
 import NavBar from '../../Partials/NavBar/NavBar';
@@ -35,14 +36,17 @@ const AppRouter = () => {
           <Route path= "/ForestillingerEvents" element={<ForestillingerEvents />} />
           <Route path="/Skuespillere" element={<Skuespillere/>} />
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/buy/:id" element={<BuyTicket/>} />
+          <Route path="/Buy/:id" element={<BuyTicket/>} />
           <Route path="/thank" element={<ThankYou/>} />
           <Route path="/write" element={<ReviewForm/>} />
           <Route path="/event/:id" element={<EventDetails/>} />
-          <Route path="/actor/:id" element={<ActorDetails/>} />
+          <Route path="/actors/:id" element={<ActorDetails/>} />
           {/* <Route path="/Pick" element={<SeatPicker/>} /> */}
           <Route path="/log" element={<Login/>} />
           <Route path="/Not" element={<NotFound/>} />
+      <Route path="/confirme/:id" element={<ConfirmOrder />} />
+      {/* <Route path="/sm" element={<SeatPicker />} /> */}
+
 
 
     </Routes>

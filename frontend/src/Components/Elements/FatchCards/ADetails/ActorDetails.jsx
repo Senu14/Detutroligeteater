@@ -8,7 +8,6 @@ function ActorDetails() {
     const {id} = useParams();
     const [data, setData] = useState({});
     const [ActorDetails, setActorDetails] = useState(null);
-
     useEffect(()=>{
         const fetchActorDetails = async ()=>{
             try{
@@ -39,6 +38,7 @@ function ActorDetails() {
                 
               />
             )}
+            <h1>this is the acotr id : {id}</h1>
             </div>
             
       <div className="Actors-button">

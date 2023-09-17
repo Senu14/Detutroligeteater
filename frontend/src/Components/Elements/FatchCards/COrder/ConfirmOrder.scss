@@ -1,0 +1,30 @@
+@use "../../../../Assets/Styled/Colors.scss" as y;
+@use "../../../../Assets/Styled/Fonts.scss" as s;
+
+.COrder {
+     width: 70%;
+     margin: 0 auto;
+     display: grid;
+     padding: 20px;
+     justify-content: center;
+     border: 2px solid #AD7A51;
+// .Order {
+//      width: 70%;
+//      margin: 0 auto;
+//      display: grid;
+//      padding: 20px;
+//      justify-content: center;
+//      border: 2px solid #080706;
+
+// }     
+.site{
+     
+     display: flex;
+     gap: 12rem;
+     
+     }
+     .moms {
+          margin-left: 17rem;
+     }
+   
+   }

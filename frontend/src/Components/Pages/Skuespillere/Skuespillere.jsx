@@ -23,13 +23,12 @@ const Skuespillere = () => {
     <div className='Actors-list'>
        <h2>Skuespillere</h2>
       
-      {
-        actors.map((actors, index) => {
-          return <ActorsList key={index} item={{image: actors.image, description: actors.description, name:actors.name}}/>
-          
+       {
+        actors.map((actor, id) => {
+          return <ActorsList key={id} item={{id: actor.id, image: actor.image, description: actor.description, name: actor.name}} id={actor.id} />;
         })
-        
       }
+
       
     </div>
     </>
